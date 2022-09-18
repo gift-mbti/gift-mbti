@@ -26,7 +26,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018, // check
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
