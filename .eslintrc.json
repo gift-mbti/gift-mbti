@@ -1,3 +1,52 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+    // "next/core-web-vitals"  원래 있던 값
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018, // check
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    //  React 를 따로 import 해주지 않아도 자동으로 import, 써주지 않아도 되는데 써줘야 한다고 에러가 뜨니 해당 rule 을 꺼준다
+    "react/react-in-jsx-scope": 0,
+    // JSX not allowed in files with extension '.tsx'
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    // props spreading 허용
+    "react/jsx-props-no-spreading": 0,
+    // 함수형 컴포넌트 방식 선언, arrow function으로
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  },
+  "globals": {
+    "React": "writable"
+  }
 }
