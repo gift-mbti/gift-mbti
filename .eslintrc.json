@@ -5,12 +5,10 @@
   },
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
     "airbnb",
+    "airbnb-typescript",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
-    // "next/core-web-vitals"  원래 있던 값
   ],
   "settings": {
     "react": {
@@ -23,6 +21,7 @@
     }
   },
   "parserOptions": {
+    "project": "./tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
     },
@@ -34,7 +33,7 @@
     //  React 를 따로 import 해주지 않아도 자동으로 import, 써주지 않아도 되는데 써줘야 한다고 에러가 뜨니 해당 rule 을 꺼준다
     "react/react-in-jsx-scope": 0,
     // JSX not allowed in files with extension '.tsx'
-    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx", ".ts"] }],
     // props spreading 허용
     "react/jsx-props-no-spreading": 0,
     // 함수형 컴포넌트 방식 선언, arrow function으로
@@ -45,20 +44,8 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    // import error가 발생하여서 임시로 처리를 해놨는데 아래 내용을 확인해서 고쳐보는것도 좋을 것 같아
-    // https://stackoverflow.com/questions/59265981/typescript-eslint-missing-file-extension-ts-import-extensions
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "": "never",
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ]
+    "prettier/prettier": 0
+    // "prettier/prettier": ["error", { "endOfLine": "auto" }]
   },
   "globals": {
     "React": "writable"

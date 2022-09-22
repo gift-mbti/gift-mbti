@@ -1,7 +1,7 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { css, Global } from '@emotion/react'
-import reset from '../styles/reset'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { css, Global } from '@emotion/react';
+import reset from '../styles/reset';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       />
       <Component {...pageProps} />
     </>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;
