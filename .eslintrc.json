@@ -45,7 +45,20 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    // import error가 발생하여서 임시로 처리를 해놨는데 아래 내용을 확인해서 고쳐보는것도 좋을 것 같아
+    // https://stackoverflow.com/questions/59265981/typescript-eslint-missing-file-extension-ts-import-extensions
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "globals": {
     "React": "writable"
