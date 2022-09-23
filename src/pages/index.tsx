@@ -37,33 +37,9 @@ const SubTitle = styled.p`
 `;
 
 const CardContainer = styled.div`
-  width: 271px;
-  height: 335px;
-  box-shadow: 0px 10px 40px rgba(106, 106, 106, 0.25);
-  border-radius: 20px;
-  margin: 0 auto;
-  margin-top: 61.36px;
-  padding: 14px 0px;
+  margin-top: 32px;
 `;
-const CardFront = styled.div`
-  width: 239px;
-  height: 307px;
-  background-color: #f5f5f5;
-  border-radius: 13px;
-  margin: 0 auto;
-`;
-
-const CardImgContainer = styled.div`
-  // 호진 TODO : absolute로 적용하게 되면 다른 모바일 사이즈에서 안맞음 => 고민해봐야함
-  position: absolute;
-  top: 326px;
-  left: 566px;
-`;
-const CardQuestionImg = styled.img`
-  width: 61px;
-  height: 96px;
-  text-align: center;
-`;
+const CardImg = styled.img``;
 
 const StartButton = styled.button`
   @font-face {
@@ -92,10 +68,7 @@ const Home = () => {
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
-        <CardImgContainer>
-          <CardQuestionImg src="img/question.svg" alt="물음표" />
-        </CardImgContainer>
-        <CardFront />
+        <CardImg src="/img/homeCard.svg" alt="homeCard" />
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
       <StartButton>테스트 시작하기</StartButton>
