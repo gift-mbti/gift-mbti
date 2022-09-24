@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import SEO from '../../components/SEO';
 
+// 내일 디자인 물어보기
 const Wrapper = styled.div`
   position: absolute;
-  width: 375px;
+  /* width: 375px; */
   height: 2051px;
 `;
 
@@ -20,21 +21,12 @@ const Card = styled.div`
   border-radius: 20px;
 `;
 
-const Image1 = styled.div`
-  position: absolute;
-  width: 200px;
-  height: 136px;
-  left: 48px;
-  top: 99px;
-  background: url('/img/image 1.svg');
-`;
-
-const CardTitle = styled.p`
+const CardTitle = styled.div`
   position: absolute;
   width: 111px;
   height: 55px;
   left: 26px;
-  top: 10px; // 디자인: 30px하니까 너무 멂 물어보기!
+  top: 30px;
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 800;
@@ -47,6 +39,15 @@ const CardTitle = styled.p`
   color: #000000;
 `;
 
+const Image1 = styled.div`
+  position: absolute;
+  width: 200px;
+  height: 136px;
+  left: 48px;
+  top: 99px;
+  background: url('/img/image 1.svg');
+`;
+
 const QR = styled.img`
   position: absolute;
   left: 228px;
@@ -55,7 +56,7 @@ const QR = styled.img`
   bottom: 91.37%;
 `;
 
-const Title = styled.p`
+const TagTitle = styled.div`
   position: absolute;
   width: 25px;
   height: 14px;
@@ -72,9 +73,7 @@ const Title = styled.p`
 
 const Tag1 = styled.div`
   box-sizing: border-box;
-
   /* Auto layout */
-
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -85,13 +84,14 @@ const Tag1 = styled.div`
   width: 71px;
   height: 28px;
   left: 26px;
-  // 디자인 : 높이 조정해둠 물어보기
-  /* top: 274px; */
-  top: 284px;
+  top: 274px;
 
   background: #ffffff;
   border: 1.5px solid #74b6fe;
   border-radius: 18px;
+
+  // 가운데 정렬
+  justify-content: center;
 
   font-family: 'Pretendard';
   font-style: normal;
@@ -108,7 +108,7 @@ const Tag3 = styled(Tag1)`
   left: 177px;
 `;
 
-// 디자인 : 뭔가 이상함
+// 디자인 : 줄간격이 이상함
 const CardText = styled.div`
   position: absolute;
   width: 200px;
@@ -120,7 +120,11 @@ const CardText = styled.div`
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  line-height: 12px;
+  // 디자인: 줄 간격 물어보기!
+  line-height: 150%;
+  /* or 12px */
+
+  /* 선물_그레이스케일3 */
 
   color: #929090;
 `;
@@ -140,7 +144,7 @@ const Result = ({ params }: any) => {
         </CardTitle>
         <QR src="/img/Vector.svg" alt="result_card" />
         <Image1 />
-        <Title>태그</Title>
+        <TagTitle>태그</TagTitle>
         <Tag1>#가격비교</Tag1>
         <Tag2>#계산적</Tag2>
         <Tag3>#신중함</Tag3>
