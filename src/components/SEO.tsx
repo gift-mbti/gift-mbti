@@ -1,13 +1,13 @@
 import Head from 'next/head';
 
-interface ITitle {
-  title: string;
+interface IType {
+  type: string;
 }
 
-const SEO = ({ title }: ITitle) => {
+const SEO = ({ type }: IType) => {
   return (
     <Head>
-      <title>{title} | Gift MBTI</title>
+      <title> MBTI | Gift MBTI</title>
     </Head>
   );
 };
