@@ -244,6 +244,38 @@ const PresentContainer = styled.div`
   background: #f1f8ff;
   border-radius: 10px;
 `;
+const PickContainer = styled.div`
+  position: absolute;
+  width: 76px;
+  height: 48px;
+  left: 285px;
+  top: 992px;
+  z-index: 1;
+
+  background: #74b6ff;
+  border-radius: 0px 20px 20px 18px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+`;
+
+const PickText = styled.div`
+  position: absolute;
+  width: 32px;
+  height: 25px;
+  left: 307px;
+  top: 1003px;
+  z-index: 1;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  /* or 12px */
+
+  text-align: center;
+
+  color: #ffffff;
+`;
 
 const Caution = styled.div`
   position: absolute;
@@ -333,10 +365,81 @@ const ShareContainer = styled.div`
   position: absolute;
   width: 375px;
   height: 377px;
-  top: 1750px;
-  // 디자인: top 간격이 좁아보임
-  /* top: 1709px; */
+  top: 1709px;
   background: #f1f8ff;
+`;
+
+const ShareTitle = styled.div`
+  position: absolute;
+  // 87로하면 줄바꿈됨
+  width: 88px;
+  height: 16px;
+  left: 144px;
+  top: 45px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  text-align: center;
+
+  color: #000000;
+`;
+
+const ShareButton = styled.button`
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  left: 165px;
+  top: 79px;
+  border-radius: 50%;
+  border: none;
+  background: #74b6ff;
+`;
+const ShareImg = styled.img`
+  position: absolute;
+  width: 22px;
+  height: 19.5px;
+  left: 12.25px;
+  top: 12.25px;
+
+  /* z-index: 1; */
+
+  /* background: url('/img/share_button.svg'); */
+`;
+
+const BasicButton = styled.button`
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 291px;
+  height: 62px;
+  top: 165px;
+  left: 42px;
+  background: #ffffff;
+  opacity: 0.8;
+  border: 2px solid #74b6ff;
+  border-radius: 15px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  text-align: center;
+
+  color: #74b6ff;
+`;
+
+const BasicButton2 = styled(BasicButton)`
+  background: #74b6ff;
+  color: #ffffff;
+  top: 239px;
 `;
 
 const Result = ({ params }: any) => {
@@ -385,15 +488,18 @@ const Result = ({ params }: any) => {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 같이 쇼핑을 따라와 준 친구가 즉흥적으로
         소비할 땐 참을 수 없어요. 친구들의 지갑 지킴이가 바로 나예요.
       </TextContainer4>
-
       <Title3>프로 지갑지킴이</Title3>
       <Title4>어떤 선물을 주고 받을까요? </Title4>
+      <PickContainer />
+      <PickText>
+        브랜드
+        <br />
+        pick!
+      </PickText>
       <PresentContainer />
       <Caution>*자체 설문조사를 통해 자료를 수집하였습니다.</Caution>
-
       <Title5>선물 메이트!</Title5>
       <Title6>나와의 환상/파국 궁합은? </Title6>
-
       <SmallCard>
         <SmallCardTitle>환상의 캐미</SmallCardTitle>
         <SmallCardText>
@@ -403,7 +509,6 @@ const Result = ({ params }: any) => {
         <Image2 />
         <DetailButton>자세히 보기</DetailButton>
       </SmallCard>
-
       <SmallCard2>
         <SmallCardTitle>파국의 캐미</SmallCardTitle>
         <SmallCardText>
@@ -414,7 +519,14 @@ const Result = ({ params }: any) => {
         <DetailButton>자세히 보기</DetailButton>
       </SmallCard2>
 
-      <ShareContainer />
+      <ShareContainer>
+        <ShareTitle>결과 공유하기</ShareTitle>
+        <ShareButton>
+          <ShareImg src="/img/share_button.svg" alt="share" />
+        </ShareButton>
+        <BasicButton>다른 유형 보기</BasicButton>
+        <BasicButton2>테스트 다시하기</BasicButton2>
+      </ShareContainer>
     </Wrapper>
   );
 };
