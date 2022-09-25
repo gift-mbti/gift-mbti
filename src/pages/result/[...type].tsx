@@ -47,6 +47,19 @@ const Image1 = styled.div`
   background: url('/img/image 1.svg');
 `;
 
+const Image2 = styled.div`
+  position: absolute;
+  width: 76px;
+  height: 59px;
+  left: 45px;
+  top: 92px;
+  background: url('/img/image 3.svg');
+`;
+
+const Image3 = styled(Image2)`
+  background: url('/img/image 2.svg');
+`;
+
 const QR = styled.img`
   position: absolute;
   left: 228px;
@@ -251,15 +264,17 @@ const Caution = styled.div`
 
 const SmallCard = styled.div`
   position: absolute;
-  left: 42px;
-  top: 71.94%;
   width: 136px;
   height: 204px;
+  left: 42px;
+  top: 1453px;
 
   background: #ffffff;
   box-shadow: 0px 10px 35px rgba(120, 120, 120, 0.25);
   border-radius: 10px;
-  /* background-image: url('/img/result_card.svg'); */
+`;
+const SmallCard2 = styled(SmallCard)`
+  left: 197px;
 `;
 
 const SmallCardTitle = styled.p`
@@ -278,6 +293,40 @@ const SmallCardTitle = styled.p`
   /* identical to box height, or 18px */
 
   color: #000000;
+`;
+const SmallCardText = styled.p`
+  position: absolute;
+  width: 73px;
+  height: 32px;
+  left: 20px;
+  /* top: 48px; */
+  top: 40px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  /* or 14px */
+
+  color: #000000;
+`;
+const DetailButton = styled.button`
+  position: absolute;
+  width: 100%;
+  height: 39px;
+  top: 165px;
+  background: #74b6ff;
+  border: none;
+  border-radius: 0px 0px 10px 10px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 100%;
+  text-align: center;
+  color: #ffffff;
 `;
 
 const ShareContainer = styled.div`
@@ -347,7 +396,23 @@ const Result = ({ params }: any) => {
 
       <SmallCard>
         <SmallCardTitle>환상의 캐미</SmallCardTitle>
+        <SmallCardText>
+          선물
+          <br /> 나르시스트
+        </SmallCardText>
+        <Image2 />
+        <DetailButton>자세히 보기</DetailButton>
       </SmallCard>
+
+      <SmallCard2>
+        <SmallCardTitle>파국의 캐미</SmallCardTitle>
+        <SmallCardText>
+          낭만 쫓는
+          <br /> 소비요정
+        </SmallCardText>
+        <Image3 />
+        <DetailButton>자세히 보기</DetailButton>
+      </SmallCard2>
 
       <ShareContainer />
     </Wrapper>
