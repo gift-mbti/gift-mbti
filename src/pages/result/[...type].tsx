@@ -194,7 +194,7 @@ const TextContainer1 = styled.div`
 `;
 
 const Star = styled.img`
-  position: absolute;
+  /* position: absolute; */
   width: 24px;
   height: 24px;
   right: 272px;
@@ -470,8 +470,8 @@ const Result = ({ params }: any) => {
       <Title2>나의 선물 유형은?</Title2>
       <TextContainer1>
         <Star src="/img/ic_dot_skyblue.svg" alt="result_card" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 그렇다고 선물에 짠 사람은 아니에요.
-        보이는 이미지를 위해 선물에는 돈을 아끼지 않아요.
+        그렇다고 선물에 짠 사람은 아니에요. 보이는 이미지를 위해 선물에는 돈을
+        아끼지 않아요.
       </TextContainer1>
       <TextContainer2>
         <Star src="/img/ic_dot_skyblue.svg" alt="result_card" />
