@@ -21,6 +21,7 @@ const QuizCardContent = styled.p`
 // 호진 TODO : Emotion 상속받는법에 대해서 생각해보기
 const QuizAnswerBtn1 = styled.button`
   display: block;
+  position: relative;
   width: 293px;
   height: 73px;
   background-color: #f5f5f5;
@@ -28,6 +29,7 @@ const QuizAnswerBtn1 = styled.button`
   border-radius: 15px;
   margin: 0 auto;
   margin-top: 15px;
+
   cursor: pointer;
   &:hover {
     border: 2px solid #fd6463;
@@ -59,10 +61,13 @@ const QuizAnswerBtn2 = styled.button`
     color: white;
   }
 `;
+
+// 호진 TODO : 텍스트 가운데 정렬이 필요하다.
 const QuizAnswer1 = styled.p`
   width: 144px;
   height: 32px;
   margin: 0 auto;
+  text-align: center;
   font-weight: 600;
   font-size: 14px;
   color: black;
@@ -76,21 +81,18 @@ const QuizAnswer2 = styled.p`
   color: black;
 `;
 
-const QuizArticle = ({ items }: any, key: any) => {
-  console.log(items);
+const QuizArticle = ({ items, onNextStep }: any) => {
   return (
     <>
       <QuizCardContainer>
         <QuizCard src="/img/quizCard.svg" alt="quizCard" />
         <QuizCardContent>{items.title}</QuizCardContent>
       </QuizCardContainer>
-      <QuizAnswerBtn1>
-        <QuizAnswer1>
-          회사에서 필요할 만한 탁상용 가습기를 선물한다.
-        </QuizAnswer1>
+      <QuizAnswerBtn1 onClick={onNextStep}>
+        <QuizAnswer1>{items.ans1}</QuizAnswer1>
       </QuizAnswerBtn1>
-      <QuizAnswerBtn2>
-        <QuizAnswer2>내 돈 주고 사기엔 아까운 핸드크림을 선물한다.</QuizAnswer2>
+      <QuizAnswerBtn2 onClick={onNextStep}>
+        <QuizAnswer2>{items.ans2}</QuizAnswer2>
       </QuizAnswerBtn2>
     </>
   );
