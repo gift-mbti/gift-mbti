@@ -65,7 +65,6 @@ const QuizAnswerBtn2 = styled.button`
 // 호진 TODO : 텍스트 가운데 정렬이 필요하다.
 const QuizAnswer1 = styled.p`
   width: 144px;
-  height: 32px;
   margin: 0 auto;
   text-align: center;
   font-weight: 600;
@@ -74,7 +73,6 @@ const QuizAnswer1 = styled.p`
 `;
 const QuizAnswer2 = styled.p`
   width: 144px;
-  height: 32px;
   margin: 0 auto;
   font-weight: 600;
   font-size: 14px;
