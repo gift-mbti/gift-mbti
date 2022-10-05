@@ -6,14 +6,18 @@ const QuizCardContainer = styled.div`
   width: 375px;
   height: 444px;
 `;
-const QuizCard = styled.img``;
+const QuizCard = styled.img`
+  position: relative;
+`;
 const QuizCardContent = styled.p`
   position: absolute;
   width: 165px;
   height: 106px;
   text-align: center;
   font-size: 19px;
+  line-height: 150%;
   font-weight: 800;
+  // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
   top: 160px;
   left: 100px;
 `;
@@ -29,11 +33,13 @@ const QuizAnswerBtn1 = styled.button`
   border-radius: 15px;
   margin: 0 auto;
   margin-top: 15px;
-
+  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   &:hover {
     border: 2px solid #fd6463;
     background-color: #ffe9e9;
+    color: #fd6463;
   }
   &:active {
     background-color: #fd6463;
@@ -41,28 +47,10 @@ const QuizAnswerBtn1 = styled.button`
   }
 `;
 
-const QuizAnswerBtn2 = styled.button`
-  display: block;
-  width: 293px;
-  height: 73px;
-  background-color: #f5f5f5;
-  border: 2px solid #dddddd;
-  border-radius: 15px;
-  margin: 0 auto;
-  margin-top: 12px;
-  margin-bottom: 65px;
-  cursor: pointer;
-  &:hover {
-    border: 2px solid #fd6463;
-    background-color: #ffe9e9;
-  }
-  &:active {
-    background-color: #fd6463;
-    color: white;
-  }
-`;
+const QuizAnswerBtn2 = styled(QuizAnswerBtn1)``;
 
 // 호진 TODO : 텍스트 가운데 정렬이 필요하다.
+// P태그 눌렀을때는 색이 잘 변하는데 button 눌렀을때 안변함
 const QuizAnswer1 = styled.p`
   width: 144px;
   margin: 0 auto;
@@ -70,14 +58,14 @@ const QuizAnswer1 = styled.p`
   font-weight: 600;
   font-size: 14px;
   color: black;
+  &:hover {
+    color: #fd6463;
+  }
+  &:active {
+    color: white;
+  }
 `;
-const QuizAnswer2 = styled.p`
-  width: 144px;
-  margin: 0 auto;
-  font-weight: 600;
-  font-size: 14px;
-  color: black;
-`;
+const QuizAnswer2 = styled(QuizAnswer1)``;
 
 const QuizArticle = ({ items, onNextStep }: any) => {
   return (

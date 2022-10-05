@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import React, { useMemo, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import QuizArticle from '../components/QuizArticle';
 import items from '../data/quiz';
 
@@ -12,7 +14,7 @@ const QuizHeader = styled.div`
 const QuizLogoImg = styled.img`
   /* 호진 TODO : logo 사이즈 다시 보기 */
   width: 56.55px;
-  height: 29.45px;
+  height: 50px;
   margin-left: 22px;
 `;
 const QuestionCountContainer = styled.p`
@@ -38,22 +40,27 @@ const quiz = () => {
   const [finish, setFinish] = useState<boolean>(false);
   const currentData = useMemo(() => items[steps], [steps]);
 
+  const router = useRouter();
+
   const handleClickNextStep = () => {
     if (steps !== 8) {
       setStep((step) => step + 1);
       setQuestion((question) => question - 1);
     } else {
       setFinish(true);
+      router.push('/loading');
     }
   };
 
   return (
     <Wrapper>
       <QuizHeader>
-        <QuizLogoImg src="/img/quizLogo.svg" alt="quizLogo" />
+        <Link href="/">
+          <QuizLogoImg src="/img/quizLogo.svg" alt="quizLogo" />
+        </Link>
         <QuestionCountContainer>남은 문항 {questions}</QuestionCountContainer>
       </QuizHeader>
-      <QuizArticle items={currentData.qna} onNextStep={handleClickNextStep} />;
+      <QuizArticle items={currentData.qna} onNextStep={handleClickNextStep} />
     </Wrapper>
   );
 };
