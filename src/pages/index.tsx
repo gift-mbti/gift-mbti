@@ -61,6 +61,8 @@ const StartButton = styled.button`
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.02em;
+  color: white;
+  cursor: pointer;
 `;
 
 const Home = () => {
