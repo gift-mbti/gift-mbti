@@ -8,6 +8,9 @@ const reset = css`
     border: 1px solid black;
     margin: 0 auto;
   }
+  p {
+    margin: 0;
+  }
 `;
 
 export default reset;
