@@ -18,8 +18,9 @@ const QuizCardContent = styled.p`
   line-height: 150%;
   font-weight: 800;
   // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
-  top: 160px;
-  left: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   white-space: pre-wrap;
 `;
 
@@ -69,18 +70,18 @@ const QuizAnswer1 = styled.p`
 `;
 const QuizAnswer2 = styled(QuizAnswer1)``;
 
-const QuizArticle = ({ items, onNextStep }: any) => {
+const QuizArticle = ({ data, onNextStep }: any) => {
   return (
     <>
       <QuizCardContainer>
         <QuizCard src="/img/quizCard.svg" alt="quizCard" />
-        <QuizCardContent>{items.title}</QuizCardContent>
+        <QuizCardContent>{data.title}</QuizCardContent>
       </QuizCardContainer>
       <QuizAnswerBtn1 onClick={onNextStep}>
-        <QuizAnswer1>{items.ans1}</QuizAnswer1>
+        <QuizAnswer1>{data.ans1}</QuizAnswer1>
       </QuizAnswerBtn1>
       <QuizAnswerBtn2 onClick={onNextStep}>
-        <QuizAnswer2>{items.ans2}</QuizAnswer2>
+        <QuizAnswer2>{data.ans2}</QuizAnswer2>
       </QuizAnswerBtn2>
     </>
   );
