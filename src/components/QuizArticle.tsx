@@ -14,12 +14,13 @@ const QuizCardContent = styled.p`
   width: 165px;
   height: 106px;
   text-align: center;
-  font-size: 19px;
+  font-size: 17px;
   line-height: 150%;
   font-weight: 800;
   // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
   top: 160px;
   left: 100px;
+  white-space: pre-wrap;
 `;
 
 // 호진 TODO : Emotion 상속받는법에 대해서 생각해보기
@@ -52,12 +53,13 @@ const QuizAnswerBtn2 = styled(QuizAnswerBtn1)``;
 // 호진 TODO : 텍스트 가운데 정렬이 필요하다.
 // P태그 눌렀을때는 색이 잘 변하는데 button 눌렀을때 안변함
 const QuizAnswer1 = styled.p`
-  width: 144px;
+  width: 260px;
   margin: 0 auto;
   text-align: center;
   font-weight: 600;
   font-size: 14px;
   color: black;
+  white-space: pre-wrap;
   &:hover {
     color: #fd6463;
   }
