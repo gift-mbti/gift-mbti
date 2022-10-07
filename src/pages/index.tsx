@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 const Wrapper = styled.div``;
 const Title = styled.p`
@@ -71,7 +72,9 @@ const Home = () => {
         <CardImg src="/img/homeCard.svg" alt="homeCard" />
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
-      <StartButton>테스트 시작하기</StartButton>
+      <Link href="/quiz">
+        <StartButton>테스트 시작하기</StartButton>
+      </Link>
     </Wrapper>
   );
 };
