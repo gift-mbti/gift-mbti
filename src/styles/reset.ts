@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 
 const reset = css`
+  * {
+    box-sizing: border-box;
+  }
   body {
     background-color: #ffffff;
     color: black;
