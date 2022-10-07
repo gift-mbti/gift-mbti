@@ -442,19 +442,13 @@ const BasicButton2 = styled(BasicButton)`
   top: 239px;
 `;
 
-const Result = ({ params }: any) => {
-  // url에 제목 넣으면 seo에 좋기 떄문
-  const [type] = params || [];
+const Result = ({ data }: any) => {
   return (
     <Wrapper>
-      <SEO type={type} />
+      <SEO type={data.type} />
       <Background src="/img/bg_result.svg" alt="result_card" />
       <Card>
-        <CardTitle>
-          프로
-          <br />
-          지갑지킴이
-        </CardTitle>
+        <CardTitle>{data.name}</CardTitle>
         <QR src="/img/Vector.svg" alt="result_card" />
         <Image1 />
         <TagTitle>태그</TagTitle>
@@ -468,6 +462,9 @@ const Result = ({ params }: any) => {
       </Card>
       <Title1>과연</Title1>
       <Title2>나의 선물 유형은?</Title2>
+      <TextContainer1>
+        <Star src="/img/ic_dot_skyblue.svg" alt="result_card" />
+      </TextContainer1>
       <TextContainer1>
         <Star src="/img/ic_dot_skyblue.svg" alt="result_card" />
         그렇다고 선물에 짠 사람은 아니에요. 보이는 이미지를 위해 선물에는 돈을
@@ -532,3 +529,46 @@ const Result = ({ params }: any) => {
 };
 
 export default Result;
+
+// export async function getServerSideProps() {
+//   const { data } = await import('../../data/result.json');
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
+
+export async function getStaticPaths() {
+  const { data } = await import('../../data/result.json');
+
+  const paths = data.map((list) => ({
+    params: { type: list.type },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const { data } = await import('../../data/result.json');
+
+  if (!params) {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (!data) {
+    return { notFound: true };
+  }
+
+  // {props: data} 빌드 타임에 받아서 result 컴포넌트로 보냄
+  return {
+    props: {
+      data: data[params.type - 1],
+    },
+  };
+}
