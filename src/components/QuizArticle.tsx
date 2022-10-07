@@ -14,12 +14,13 @@ const QuizCardContent = styled.p`
   width: 165px;
   height: 106px;
   text-align: center;
-  font-size: 19px;
+  font-size: 17px;
   line-height: 150%;
   font-weight: 800;
   // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
   top: 160px;
   left: 100px;
+  white-space: pre-wrap;
 `;
 
 // 호진 TODO : Emotion 상속받는법에 대해서 생각해보기
@@ -58,6 +59,7 @@ const QuizAnswer1 = styled.p`
   font-weight: 600;
   font-size: 14px;
   color: black;
+
   &:hover {
     color: #fd6463;
   }
