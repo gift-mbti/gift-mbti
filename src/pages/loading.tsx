@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const LoadingWrapper = styled.div`
   position: relative;
@@ -23,6 +24,14 @@ const LoadingImg = styled.img`
 `;
 
 const loading = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/result/1');
+    }, 3000);
+  }, []);
+
   return (
     <LoadingWrapper>
       <LoadingTitle>선물 유형을 분석 중입니다...</LoadingTitle>
