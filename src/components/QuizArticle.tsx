@@ -53,13 +53,13 @@ const QuizAnswerBtn2 = styled(QuizAnswerBtn1)``;
 // 호진 TODO : 텍스트 가운데 정렬이 필요하다.
 // P태그 눌렀을때는 색이 잘 변하는데 button 눌렀을때 안변함
 const QuizAnswer1 = styled.p`
-  width: 144px;
+  width: 260px;
   margin: 0 auto;
   text-align: center;
   font-weight: 600;
   font-size: 14px;
   color: black;
-
+  white-space: pre-wrap;
   &:hover {
     color: #fd6463;
   }
