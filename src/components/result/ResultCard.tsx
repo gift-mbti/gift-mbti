@@ -46,7 +46,7 @@ const QR = styled.img`
   bottom: 91.37%;
 `;
 
-const TagTitle = styled.div`
+export const TagTitle = styled.div`
   position: absolute;
   width: 25px;
   height: 14px;
@@ -60,7 +60,7 @@ const TagTitle = styled.div`
   color: #393939;
 `;
 
-const TagContainer = styled.div`
+export const TagContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -79,7 +79,7 @@ const TagContainer = styled.div`
   line-height: 148%;
 `;
 
-const Tag = styled.div`
+export const Tag = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;

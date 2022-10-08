@@ -1,14 +1,5 @@
 import styled from '@emotion/styled';
 
-const PresentContainer = styled.div`
-  /* position: absolute; */
-  margin-top: 44px;
-  width: 291px;
-  height: 258px;
-
-  background: ${(props) => props.color};
-  border-radius: 10px;
-`;
 const PickContainer = styled.div`
   /* position: absolute; */
   width: 76px;
@@ -54,21 +45,90 @@ const Caution = styled.div`
 
   color: #bbb6b6;
 `;
-const Container = styled.div`
+
+const PresentContainer = styled.div`
+  /* position: absolute; */
+  margin-top: 44px;
+  width: 291px;
+  height: 258px;
+
+  background: ${(props) => props.color};
+  border-radius: 10px;
   display: flex;
 `;
-const BestContainer = styled.div`
+const Container = styled.div`
+  flex: 33%;
   display: flex;
   flex-direction: column;
 `;
-const BestTitle = styled.div``;
-const BestContent = styled.div``;
-const Divider = styled.div``;
-const Dots = styled.div``;
-const TagContainer = styled.div``;
-const Tags = styled.div``;
+const BestContainer = styled.div`
+  margin: auto;
+  margin-top: 23px;
+  margin-bottom: 51px;
+  text-align: center;
+`;
 
-const Pick = ({ pickColor, bgColor, gift, giftTag }: any) => {
+const BestTitle = styled.p`
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+
+  text-align: center;
+
+  color: ${(props) => props.color};
+`;
+const BestContent = styled.div`
+  margin-top: 10px;
+  width: 54px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+`;
+
+const TagContainer = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+`;
+
+const Tag = styled.div`
+  padding: 5px 10px;
+  gap: 10px;
+  margin: auto;
+
+  background: #ffffff;
+  border: 1.5px solid ${(props) => props.color};
+  border-radius: 18px;
+  justify-content: center;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 148%;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: ${(props) => props.color};
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`;
+
+const Pick = ({ pickColor, bgColor, gift, giftTag, pickTextColor }: any) => {
   return (
     <div>
       <PickContainer color={pickColor}>
@@ -79,30 +139,21 @@ const Pick = ({ pickColor, bgColor, gift, giftTag }: any) => {
         </PickText>
       </PickContainer>
       <PresentContainer color={bgColor}>
-        <Container>
-          {gift.map((item: any, index: number) => {
-            return (
-              <BestContainer>
-                <BestTitle>{index + 1}위</BestTitle>
-                <BestContent>{item}</BestContent>
-                <Divider />
-                <Dots />
-              </BestContainer>
-            );
-          })}
-        </Container>
-        <Container>
-          {giftTag.map((item: any, index: number) => {
-            return (
-              <TagContainer>
-                {item.map((i: any) => {
-                  return <Tags>{i}</Tags>;
-                })}
-              </TagContainer>
-            );
-          })}
-        </Container>
+        {gift.map((g: string, index: number) => (
+          <Container>
+            <BestContainer>
+              <BestTitle color={pickTextColor}>{index + 1}위</BestTitle>
+              <BestContent>{g}</BestContent>
+            </BestContainer>
+            <TagContainer>
+              {giftTag[index].map((i: string) => (
+                <Tag color={pickTextColor}>{i}</Tag>
+              ))}
+            </TagContainer>
+          </Container>
+        ))}
       </PresentContainer>
+      <Caution> *자체 설문조사를 통해 자료를 수집하였습니다. </Caution>
     </div>
   );
 };

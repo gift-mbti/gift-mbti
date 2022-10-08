@@ -92,6 +92,7 @@ const Result = ({ data }: any) => {
           bgColor={data.bgColor}
           gift={data.gift}
           giftTag={data.giftTag}
+          pickTextColor={data.pickTextColor}
         />
 
         <Title3>선물 메이트!</Title3>

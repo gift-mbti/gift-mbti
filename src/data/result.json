@@ -16,6 +16,7 @@
       "midName": "큰 그림 선물러",
       "pickColor": "#5FC87E",
       "bgColor": "#E7FAEC",
+      "pickTextColor": "#5DC87D",
       "gift": ["모바일\n교환권", "패션", "상품권/\n영화/도서"],
       "giftTag": [
         ["스타벅스", "투썸플레이스", "배스킨라빈스"],
@@ -44,6 +45,7 @@
       "midName": "브랜드 외길인생",
       "pickColor": "#608DF7",
       "bgColor": "#EFF3FD",
+      "pickTextColor": "#5F8DF7",
       "gift": ["모바일\n교환권", "상품권/\n영화/도서", "패션"],
       "giftTag": [
         ["BHC", "배달의 민족", "스타벅스"],
@@ -71,6 +73,7 @@
       "midName": "아기자기 선물보따리",
       "pickColor": "#FB8CB4",
       "bgColor": "#FFF3F8",
+      "pickTextColor": "#FE8DB6",
       "gift": ["모바일 \n교환권", "뷰티", "상품권/\n영화/도서"],
       "giftTag": [
         ["스타벅스", "투썸플레이스", "BBQ"],
@@ -98,6 +101,7 @@
       "midName": "낭만 쫓는 소비요정",
       "pickColor": "#B976DE",
       "bgColor": "#F8F1FB",
+      "pickTextColor": "#B576D9",
       "gift": ["모바일 \n교환권", "상품권/\n영화/도서", "패션"],
       "giftTag": [
         ["스타벅스", "투썸플레이스", "BBQ"],
@@ -124,6 +128,7 @@
       "midName": "아낌없는 해바라기",
       "pickColor": "#FFE15F",
       "bgColor": "#FFF7D4",
+      "pickTextColor": "#FFE15F",
       "gift": ["모바일 \n교환권", "상품권/\n영화/도서", "뷰티"],
       "giftTag": [
         ["스타벅스", "투썸플레이스", "배스킨라빈스"],
@@ -152,6 +157,7 @@
       "midName": "반짝반짝 플렉서",
       "pickColor": "#FEAD64",
       "bgColor": "#FFF3E8",
+      "pickTextColor": "#FCAD64",
       "gift": ["모바일 \n교환권", "상품권/\n영화/도서", "뷰티"],
       "giftTag": [
         ["스타벅스", "이디야", "파리바게뜨"],
@@ -178,6 +184,7 @@
       "midName": "프로 지갑지킴이",
       "pickColor": "#74B6FF",
       "bgColor": "#F1F8FF",
+      "pickTextColor": "#74B6FF",
       "gift": ["모바일 \n교환권", "상품권/\n영화/도서", "디지털\n가전"],
       "giftTag": [
         ["스타벅스", "BBQ", "투썸플레이스"],
@@ -205,6 +212,7 @@
       "midName": "선물 나르시시스트",
       "pickColor": "#FA7473",
       "bgColor": "#FA7473",
+      "pickTextColor": "#FA7473",
       "gift": ["모바일 \n교환권", "뷰티", "패션"],
       "giftTag": [
         ["스타벅스", "배달의 민족", "BHC"],
