@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
 
+const Wrapper = styled.div`
+  position: relative;
+`;
+
 const PickContainer = styled.div`
-  /* position: absolute; */
+  position: absolute;
   width: 76px;
   height: 48px;
-  margin: 10px 14px 0 229px;
-  /* left: 285px;
-  top: 992px; */
+  left: 243px;
+  bottom: 270px;
   z-index: 1;
 
   background: ${(props) => props.color};
@@ -18,7 +21,8 @@ const PickText = styled.p`
   position: absolute;
   width: 32px;
   height: 25px;
-
+  left: 22px;
+  top: 11px;
   z-index: 1;
 
   font-family: 'Pretendard';
@@ -130,7 +134,7 @@ const Tag = styled.div`
 
 const Pick = ({ pickColor, bgColor, gift, giftTag, pickTextColor }: any) => {
   return (
-    <div>
+    <Wrapper>
       <PickContainer color={pickColor}>
         <PickText>
           브랜드
@@ -154,7 +158,7 @@ const Pick = ({ pickColor, bgColor, gift, giftTag, pickTextColor }: any) => {
         ))}
       </PresentContainer>
       <Caution> *자체 설문조사를 통해 자료를 수집하였습니다. </Caution>
-    </div>
+    </Wrapper>
   );
 };
 
