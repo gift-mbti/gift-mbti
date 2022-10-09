@@ -22,7 +22,6 @@ const PickText = styled.p`
   width: 32px;
   height: 25px;
   left: 22px;
-  top: 11px;
   z-index: 1;
 
   font-family: 'Pretendard';
