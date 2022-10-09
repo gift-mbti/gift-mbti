@@ -52,7 +52,6 @@ const SmallCardTitle = styled.p`
 `;
 const SmallCardText = styled.p`
   position: absolute;
-  width: 73px;
   height: 32px;
   left: 20px;
   top: 48px;
@@ -67,6 +66,10 @@ const SmallCardText = styled.p`
 
   color: #000000;
 `;
+const NonCardText = styled(SmallCardText)`
+  top: 72px;
+`;
+
 const DetailButton = styled.button`
   position: absolute;
   width: 100%;
@@ -99,10 +102,23 @@ const Cards = ({ best, worst, buttonColor }: any) => {
       </SmallCard>
       <SmallCard2>
         <SmallCardTitle>파국의 캐미</SmallCardTitle>
-        {/* 파국이 없을 떈 크기, 이미지 변경 */}
-        <SmallCardText>{worst}</SmallCardText>
-        <Image3 />
-        <DetailButton color={buttonColor}>자세히 보기</DetailButton>
+        {worst ? (
+          <>
+            <SmallCardText>{worst}</SmallCardText>
+            <Image3 />
+            <DetailButton color={buttonColor}>자세히 보기</DetailButton>
+          </>
+        ) : (
+          <>
+            <NonCardText>
+              파국이 뭔가요?
+              <br />
+              대체로 모두와
+              <br />잘 어울려요!
+            </NonCardText>
+            <DetailButton color="#CCCCCC">자세히 보기</DetailButton>
+          </>
+        )}
       </SmallCard2>
     </CardContainer>
   );
