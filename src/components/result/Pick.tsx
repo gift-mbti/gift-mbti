@@ -68,7 +68,7 @@ const Container = styled.div`
 const BestContainer = styled.div`
   margin: auto;
   margin-top: 23px;
-  margin-bottom: 51px;
+  margin-bottom: 17px;
   text-align: center;
 `;
 
@@ -96,6 +96,24 @@ const BestContent = styled.div`
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
+`;
+const Dots = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+`;
+
+const Dot = styled.div`
+  /* position: absolute; */
+  margin-bottom: 3px;
+  width: 2px;
+  height: 2px;
+  /* left: 503px;
+  top: 1222px; */
+
+  background: ${(props) => props.color};
 `;
 
 const TagContainer = styled.div`
@@ -149,6 +167,11 @@ const Pick = ({ pickColor, bgColor, gift, giftTag, pickTextColor }: any) => {
               <BestTitle color={pickTextColor}>{index + 1}위</BestTitle>
               <BestContent>{g}</BestContent>
             </BestContainer>
+            <Dots>
+              <Dot color={pickTextColor} /> <Dot color={pickTextColor} />
+              <Dot color={pickTextColor} /> <Dot color={pickTextColor} />
+            </Dots>
+
             <TagContainer>
               {giftTag[index].map((i: string) => (
                 <Tag color={pickTextColor}>{i}</Tag>
