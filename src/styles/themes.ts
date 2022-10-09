@@ -2,7 +2,7 @@ import { Theme } from '@emotion/react';
 
 const color = {
   purple: '#9268EC',
-  red: '#FA7473',
+  red: '#FA7473', // tag, pick과 같은 색
   pink: '#F998DC',
   yellow: '#FFE77D',
   blue: '#687DEC',
