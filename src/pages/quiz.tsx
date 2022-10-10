@@ -118,7 +118,7 @@ const quiz = () => {
         </Modal>
         <QuestionCountContainer>남은 문항 {questions}</QuestionCountContainer>
       </QuizHeader>
-      <QuizArticle items={currentData.qna} onNextStep={handleClickNextStep} />
+      <QuizArticle data={currentData.qna} onNextStep={handleClickNextStep} />
     </Wrapper>
   );
 };
