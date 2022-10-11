@@ -1,30 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-const QuizCardContainer = styled.div`
-  position: relative;
-  width: 375px;
-  height: 444px;
-`;
-const QuizCard = styled.img`
-  position: relative;
-`;
-const QuizCardContent = styled.p`
-  position: absolute;
-  width: 190px;
-  height: 106px;
-  text-align: center;
-  font-size: 17px;
-  line-height: 150%;
-  font-weight: 800;
-  // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: pre-wrap;
-`;
-
-// 호진 TODO : Emotion 상속받는법에 대해서 생각해보기
 const QuizAnswerBtn1 = styled.button`
   display: block;
   position: relative;
@@ -68,22 +44,13 @@ const QuizAnswer1 = styled.p`
     color: white;
   }
 `;
-const QuizAnswer2 = styled(QuizAnswer1)``;
+// const QuizAnswer2 = styled(QuizAnswer1)``;
 
 const QuizArticle = ({ data, onNextStep }: any) => {
   return (
-    <>
-      <QuizCardContainer>
-        <QuizCard src="/img/quizCard.svg" alt="quizCard" />
-        <QuizCardContent>{data.title}</QuizCardContent>
-      </QuizCardContainer>
-      <QuizAnswerBtn1 onClick={onNextStep}>
-        <QuizAnswer1>{data.ans1}</QuizAnswer1>
-      </QuizAnswerBtn1>
-      <QuizAnswerBtn2 onClick={onNextStep}>
-        <QuizAnswer2>{data.ans2}</QuizAnswer2>
-      </QuizAnswerBtn2>
-    </>
+    <QuizAnswerBtn1 onClick={onNextStep}>
+      <QuizAnswer1>{data.content}</QuizAnswer1>
+    </QuizAnswerBtn1>
   );
 };
 
