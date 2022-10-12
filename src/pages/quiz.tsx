@@ -105,9 +105,8 @@ const quiz = () => {
   const [open, isOpen] = useState<boolean>(false);
   const router = useRouter();
 
-  const handleClickNextStep = () => {
-    const [key, value] = Object.entries(currentData.options)[0];
-    console.log(value.type);
+  const handleClickNextStep = (ans: any) => {
+    const [key, value] = Object.entries(ans.type)[0];
 
     if (steps !== 8) {
       setStep((step) => step + 1);
@@ -151,8 +150,16 @@ const quiz = () => {
       {/* 2번째꺼를 클릭해도 첫번째만 나오는 이유는? */}
       {/* 이 부분인데 이렇게 함으로써 2개의 버튼이 생성되고 클릭을 했을때 해당 클릭한 부분의 mbti로직을 알고 싶은거야 근데 두번째를 눌러도 첫번째 값만 떠! 
       이유가 저기 handleClickNextStep 함수의 index를 항상 0번째로 해서 그런데 그 사람 로직도 항상 0번째를 가리키더라구 왜 그러는 걸까?? */}
-      {currentData.options.map((ans) => {
-        return <QuizArticle data={ans} onNextStep={handleClickNextStep} />;
+      {currentData.options.map((ans, index: number) => {
+        return (
+          <QuizArticle
+            key={index}
+            data={ans}
+            onNextStep={() => {
+              handleClickNextStep(ans);
+            }}
+          />
+        );
       })}
     </Wrapper>
   );
