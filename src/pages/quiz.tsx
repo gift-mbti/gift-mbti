@@ -74,6 +74,29 @@ const ModalCancelBtn = styled.button`
   cursor: pointer;
 `;
 
+const QuizCardContainer = styled.div`
+  position: relative;
+  width: 375px;
+  height: 444px;
+`;
+const QuizCard = styled.img`
+  position: relative;
+`;
+const QuizCardContent = styled.p`
+  position: absolute;
+  width: 190px;
+  height: 106px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 150%;
+  font-weight: 800;
+  // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: pre-wrap;
+`;
+
 const quiz = () => {
   const [steps, setStep] = useState<number>(0);
   const [questions, setQuestion] = useState<number>(8);
@@ -83,6 +106,9 @@ const quiz = () => {
   const router = useRouter();
 
   const handleClickNextStep = () => {
+    const [key, value] = Object.entries(currentData.options)[0];
+    console.log(value.type);
+
     if (steps !== 8) {
       setStep((step) => step + 1);
       setQuestion((question) => question - 1);
@@ -118,7 +144,16 @@ const quiz = () => {
         </Modal>
         <QuestionCountContainer>남은 문항 {questions}</QuestionCountContainer>
       </QuizHeader>
-      <QuizArticle items={currentData.qna} onNextStep={handleClickNextStep} />
+      <QuizCardContainer>
+        <QuizCard src="/img/quizCard.svg" alt="quizCard" />
+        <QuizCardContent>{currentData.title}</QuizCardContent>
+      </QuizCardContainer>
+      {/* 2번째꺼를 클릭해도 첫번째만 나오는 이유는? */}
+      {/* 이 부분인데 이렇게 함으로써 2개의 버튼이 생성되고 클릭을 했을때 해당 클릭한 부분의 mbti로직을 알고 싶은거야 근데 두번째를 눌러도 첫번째 값만 떠! 
+      이유가 저기 handleClickNextStep 함수의 index를 항상 0번째로 해서 그런데 그 사람 로직도 항상 0번째를 가리키더라구 왜 그러는 걸까?? */}
+      {currentData.options.map((ans) => {
+        return <QuizArticle data={ans} onNextStep={handleClickNextStep} />;
+      })}
     </Wrapper>
   );
 };
