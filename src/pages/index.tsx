@@ -40,7 +40,12 @@ const SubTitle = styled.p`
 const CardContainer = styled.div`
   margin-top: 32px;
 `;
-const CardImg = styled.img``;
+
+// lighthouse 최적화 - Image elements do not have explicit width and height
+const CardImg = styled.img`
+  width: 375px;
+  height: 440px;
+`;
 
 const StartButton = styled.button`
   @font-face {
