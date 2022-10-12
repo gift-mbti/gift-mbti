@@ -1,109 +1,60 @@
 import styled from '@emotion/styled';
-import Cards from '../../components/result/Cards';
-import Description from '../../components/result/Description';
-import Pick from '../../components/result/Pick';
-import ResultCard from '../../components/result/ResultCard';
-import Share from '../../components/result/Share';
+import Description from '../../components/result/organisms/Description';
+import Pick from '../../components/result/molecules/Pick';
+import Card from '../../components/result/molecules/Card';
+import Share from '../../components/result/organisms/Share';
 import SEO from '../../components/SEO';
+import Cards from '../../components/result/organisms/Cards';
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   position: relative;
   font-family: 'Pretendard';
+  font-style: normal;
+  white-space: pre-wrap;
 `;
 
 const Background = styled.img``;
 
-const Title1 = styled.div`
-  margin-top: 187px;
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 100%;
-
-  color: #929090;
-`;
-
-const Title2 = styled.div`
-  margin-top: 10px;
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 100%;
-
-  color: #000000;
-`;
 const Container = styled.div`
   margin: auto;
   width: 292px;
-  padding: 0;
-  white-space: pre-wrap;
 
-  font-family: 'Pretendard';
-  font-style: normal;
   font-weight: 500;
   font-size: 15px;
   // 줄 간격 물어보기
   line-height: 150%;
-  /* or 15px */
 
   color: #514e4e;
 `;
 
-const Title3 = styled.div`
-  margin-top: 60px;
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 100%;
-
-  color: #929090;
-`;
-
-const Title4 = styled(Title3)`
-  margin-top: 10px;
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 100%;
-
-  color: #000000;
-`;
-
 const Result = ({ data }: any) => {
+  const backgroundImg = `/img/background/bg_result${data.type}.svg`;
+  const starImg = `/img/dot/ic_dot${data.type}.svg`;
+  const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
+
   return (
     <Wrapper>
-      <SEO type={data.type} />
-      <Background src={data.background} alt="result_card" />
-      <ResultCard name={data.name} tags={data.tags} tagColor={data.tagColor} />
+      <SEO type={data.name} />
+      <Background src={backgroundImg} alt="result_card" />
+      <Card
+        name={data.name}
+        cardImg={cardImg}
+        tags={data.tags}
+        color={data.color}
+      />
 
       <Container>
-        <Title1>과연</Title1>
-        <Title2>나의 선물 유형은?</Title2>
-        <Description desc={data.desc} star={data.star} />
-
-        <Title3>{data.midName}</Title3>
-        <Title4>어떤 선물을 주고 받을까요? </Title4>
+        <Description desc={data.desc} star={starImg} />
         <Pick
-          pickColor={data.pickColor}
+          midName={data.midName}
+          color={data.color}
           bgColor={data.bgColor}
           gift={data.gift}
           giftTag={data.giftTag}
-          pickTextColor={data.pickTextColor}
         />
-
-        <Title3>선물 메이트!</Title3>
-        <Title4>나와의 환상/파국 궁합은? </Title4>
-        <Cards
-          best={data.best}
-          worst={data.worst}
-          buttonColor={data.buttonColor}
-        />
+        <Cards best={data.best} worst={data.worst} color={data.color} />
       </Container>
-      <Share bgColor={data.bgColor} buttonColor={data.buttonColor} />
+      <Share bgColor={data.bgColor} color={data.color} />
     </Wrapper>
   );
 };
