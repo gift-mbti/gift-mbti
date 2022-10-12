@@ -30,12 +30,14 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
   "rules": {
-    //  React 를 따로 import 해주지 않아도 자동으로 import, 써주지 않아도 되는데 써줘야 한다고 에러가 뜨니 해당 rule 을 꺼준다
+    // React 를 따로 import 해주지 않아도 자동으로 import, 써주지 않아도 되는데 써줘야 한다고 에러가 뜨니 해당 rule 을 꺼준다
     "react/react-in-jsx-scope": 0,
     // JSX not allowed in files with extension '.tsx'
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx", ".ts"] }],
     // props spreading 허용
     "react/jsx-props-no-spreading": 0,
+    // // key값으로 index를 사용할수 있도록
+    "react/no-array-index-key": "off",
     // 함수형 컴포넌트 방식 선언, arrow function으로
     "react/function-component-definition": [
       2,
@@ -44,6 +46,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+
     "prettier/prettier": 0
     // "prettier/prettier": ["error", { "endOfLine": "auto" }]
   },
