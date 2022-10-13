@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Wrapper = styled.div``;
 const Title = styled.p`
@@ -76,7 +77,13 @@ const Home = () => {
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
-        <CardImg src="/img/homeCard.svg" alt="homeCard" />
+        <Image
+          src="/img/homeCard.svg"
+          alt="homeCard"
+          width="375px"
+          height="440px"
+          priority
+        />
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
       <Link href="/quiz">
