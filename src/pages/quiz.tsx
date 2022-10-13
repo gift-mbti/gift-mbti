@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import React, { useMemo, useState } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import QuizArticle from '../components/QuizArticle';
 import items from '../data/quiz';
 import ModalStyle from '../styles/modalStyle';
+import calculateResult from '../utils/calculateResult';
 
 const Wrapper = styled.div``;
 const QuizHeader = styled.div`
@@ -97,26 +97,65 @@ const QuizCardContent = styled.p`
   white-space: pre-wrap;
 `;
 
+interface TypeState {
+  [key: string]: number;
+}
+// ans 타입 다시 설정하기
+interface AnswerProps {
+  content: string;
+  type: {
+    [key: string]: number;
+  };
+}
+
 const quiz = () => {
   const [steps, setStep] = useState<number>(0);
   const [questions, setQuestion] = useState<number>(8);
   const [finish, setFinish] = useState<boolean>(false);
   const currentData = useMemo(() => items[steps], [steps]);
   const [open, isOpen] = useState<boolean>(false);
+  const [type, setType] = useState<TypeState>({
+    S: 0,
+    N: 0,
+    T: 0,
+    F: 0,
+    J: 0,
+    P: 0,
+  });
+
   const router = useRouter();
 
-  const handleClickNextStep = (ans: any) => {
+  // finish의 상태가 바뀌면 계산을 진행한후에 결과값을 출력한다.
+  useEffect(() => {
+    // 호진TODO: useEffect를 사용해서 finish의 상태가 바뀔때 사용하는데 왜 finish의 상태가 바뀌지 않아도 작동하는지 모르겠음
+    if (!finish) return;
+
+    const res = calculateResult(type);
+    router.push({
+      pathname: '/loading',
+      query: {
+        res,
+      },
+    });
+  }, [finish]);
+
+  // 호진 TODO:ans 타입이 any일때는 value값에 에러가 발생하는데 타입을 지정해주면 에러가 발생하지 않음!
+  const handleClickNextStep = (ans: AnswerProps) => {
     const [key, value] = Object.entries(ans.type)[0];
-    console.log(key, value);
+
+    setType({
+      ...type,
+      [key]: type[key] + value,
+    });
 
     if (steps !== 8) {
       setStep((step) => step + 1);
       setQuestion((question) => question - 1);
     } else {
       setFinish(true);
-      router.push('/loading');
     }
   };
+
   const handleClickModal = () => {
     isOpen(true);
   };
@@ -148,10 +187,7 @@ const quiz = () => {
         <QuizCard src="/img/quizCard.svg" alt="quizCard" />
         <QuizCardContent>{currentData.title}</QuizCardContent>
       </QuizCardContainer>
-      {/* 2번째꺼를 클릭해도 첫번째만 나오는 이유는? */}
-      {/* 이 부분인데 이렇게 함으로써 2개의 버튼이 생성되고 클릭을 했을때 해당 클릭한 부분의 mbti로직을 알고 싶은거야 근데 두번째를 눌러도 첫번째 값만 떠! 
-      이유가 저기 handleClickNextStep 함수의 index를 항상 0번째로 해서 그런데 그 사람 로직도 항상 0번째를 가리키더라구 왜 그러는 걸까?? */}
-      {currentData.options.map((ans, i) => {
+      {currentData.options.map((ans: any, i: number) => {
         return (
           <QuizArticle
             key={i}
