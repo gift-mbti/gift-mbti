@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import React, { useMemo, useState } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
 import QuizArticle from '../components/QuizArticle';
 import items from '../data/quiz';
 import ModalStyle from '../styles/modalStyle';
+import calculateResult from '../utils/calculateResult';
 
 const Wrapper = styled.div``;
 const QuizHeader = styled.div`
@@ -74,23 +74,88 @@ const ModalCancelBtn = styled.button`
   cursor: pointer;
 `;
 
+const QuizCardContainer = styled.div`
+  position: relative;
+  width: 375px;
+  height: 444px;
+`;
+const QuizCard = styled.img`
+  position: relative;
+`;
+const QuizCardContent = styled.p`
+  position: absolute;
+  width: 190px;
+  height: 106px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 150%;
+  font-weight: 800;
+  // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: pre-wrap;
+`;
+
+interface TypeState {
+  [key: string]: number;
+}
+// ans 타입 다시 설정하기
+interface AnswerProps {
+  content: string;
+  type: {
+    [key: string]: number;
+  };
+}
+
 const quiz = () => {
   const [steps, setStep] = useState<number>(0);
   const [questions, setQuestion] = useState<number>(8);
   const [finish, setFinish] = useState<boolean>(false);
   const currentData = useMemo(() => items[steps], [steps]);
   const [open, isOpen] = useState<boolean>(false);
+  const [type, setType] = useState<TypeState>({
+    S: 0,
+    N: 0,
+    T: 0,
+    F: 0,
+    J: 0,
+    P: 0,
+  });
+
   const router = useRouter();
 
-  const handleClickNextStep = () => {
+  // finish의 상태가 바뀌면 계산을 진행한후에 결과값을 출력한다.
+  useEffect(() => {
+    // 호진TODO: useEffect를 사용해서 finish의 상태가 바뀔때 사용하는데 왜 finish의 상태가 바뀌지 않아도 작동하는지 모르겠음
+    if (!finish) return;
+
+    const res = calculateResult(type);
+    router.push({
+      pathname: '/loading',
+      query: {
+        res,
+      },
+    });
+  }, [finish]);
+
+  // 호진 TODO:ans 타입이 any일때는 value값에 에러가 발생하는데 타입을 지정해주면 에러가 발생하지 않음!
+  const handleClickNextStep = (ans: AnswerProps) => {
+    const [key, value] = Object.entries(ans.type)[0];
+
+    setType({
+      ...type,
+      [key]: type[key] + value,
+    });
+
     if (steps !== 8) {
       setStep((step) => step + 1);
       setQuestion((question) => question - 1);
     } else {
       setFinish(true);
-      router.push('/loading');
     }
   };
+
   const handleClickModal = () => {
     isOpen(true);
   };
@@ -118,7 +183,19 @@ const quiz = () => {
         </Modal>
         <QuestionCountContainer>남은 문항 {questions}</QuestionCountContainer>
       </QuizHeader>
-      <QuizArticle items={currentData.qna} onNextStep={handleClickNextStep} />
+      <QuizCardContainer>
+        <QuizCard src="/img/quizCard.svg" alt="quizCard" />
+        <QuizCardContent>{currentData.title}</QuizCardContent>
+      </QuizCardContainer>
+      {currentData.options.map((ans: any, i: number) => {
+        return (
+          <QuizArticle
+            key={i}
+            data={ans}
+            onNextStep={() => handleClickNextStep(ans)}
+          />
+        );
+      })}
     </Wrapper>
   );
 };

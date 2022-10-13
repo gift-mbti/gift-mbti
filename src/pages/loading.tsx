@@ -25,10 +25,11 @@ const LoadingImg = styled.img`
 
 const loading = () => {
   const router = useRouter();
+  const queryResult = router.query.res;
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/result/1');
+      router.push(`/result/${queryResult}`);
     }, 3000);
   }, []);
 
