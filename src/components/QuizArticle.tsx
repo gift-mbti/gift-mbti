@@ -15,6 +15,7 @@ const QuizAnswerBtn1 = styled.button`
   font-size: 14px;
   cursor: pointer;
   white-space: pre-wrap;
+  color: black;
   &:hover {
     border: 2px solid #fd6463;
     background-color: #ffe9e9;
