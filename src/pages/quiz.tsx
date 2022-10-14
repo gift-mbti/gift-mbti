@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import Modal from 'react-modal';
+import { GetStaticProps } from 'next';
 import QuizArticle from '../components/QuizArticle';
 import items from '../data/quiz';
+// import qna from '../data/quiz.json';
 import ModalStyle from '../styles/modalStyle';
 import calculateResult from '../utils/calculateResult';
 
@@ -139,7 +141,7 @@ const quiz = () => {
     });
   }, [finish]);
 
-  // 호진 TODO:ans 타입이 any일때는 value값에 에러가 발생하는데 타입을 지정해주면 에러가 발생하지 않음!
+  // 호진 TODO: ans 타입이 any일때는 value값에 에러가 발생하는데 타입을 지정해주면 에러가 발생하지 않음!
   const handleClickNextStep = (ans: AnswerProps) => {
     const [key, value] = Object.entries(ans.type)[0];
 
@@ -201,3 +203,14 @@ const quiz = () => {
 };
 
 export default quiz;
+
+// 호진TODO: 왜 못불러 올까???
+// export const getStaticProps: GetStaticProps = async () => {
+//   const items = (await import('../data/quiz.json')).default;
+
+//   return {
+//     props: {
+//       items,
+//     },
+//   };
+// };
