@@ -78,7 +78,7 @@ const Home = () => {
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
         <Image
-          src="/img/homeCard.png"
+          src="/img/homeCard.svg"
           alt="homeCard"
           width="375px"
           height="440px"
