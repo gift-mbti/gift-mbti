@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Wrapper = styled.div``;
 const Title = styled.p`
@@ -39,7 +41,12 @@ const SubTitle = styled.p`
 const CardContainer = styled.div`
   margin-top: 32px;
 `;
-const CardImg = styled.img``;
+
+// lighthouse 최적화 - Image elements do not have explicit width and height
+const CardImg = styled.img`
+  width: 375px;
+  height: 440px;
+`;
 
 const StartButton = styled.button`
   @font-face {
@@ -60,6 +67,8 @@ const StartButton = styled.button`
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.02em;
+  color: white;
+  cursor: pointer;
 `;
 
 const Home = () => {
@@ -68,10 +77,18 @@ const Home = () => {
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
-        <CardImg src="/img/homeCard.svg" alt="homeCard" />
+        <Image
+          src="/img/homeCard.svg"
+          alt="homeCard"
+          width="375px"
+          height="440px"
+          priority
+        />
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
-      <StartButton>테스트 시작하기</StartButton>
+      <Link href="/quiz">
+        <StartButton>테스트 시작하기</StartButton>
+      </Link>
     </Wrapper>
   );
 };
