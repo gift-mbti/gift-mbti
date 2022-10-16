@@ -30,14 +30,20 @@ interface IButton {
   color: string;
   text: string;
   type: string;
+  onButtonClick?: () => void;
 }
 
-const Button = ({ color, text, type }: IButton) => {
+// jaman - 디자인 버튼 호버시 효과?
+const Button = ({ onButtonClick, color, text, type }: IButton) => {
   const result =
     type === 'defult' ? (
-      <BasicButton color={color}>{text}</BasicButton>
+      <BasicButton onClick={onButtonClick} color={color}>
+        {text}
+      </BasicButton>
     ) : (
-      <ColorReverseButton color={color}>{text}</ColorReverseButton>
+      <ColorReverseButton onClick={onButtonClick} color={color}>
+        {text}
+      </ColorReverseButton>
     );
   return result;
 };

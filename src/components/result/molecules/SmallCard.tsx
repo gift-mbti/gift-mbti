@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Router from 'next/router';
 
 const Container = styled.div`
   position: relative;
@@ -46,7 +47,7 @@ const DetailButton = styled.button`
   position: relative;
   width: 100%;
   height: 39px;
-  margin-top: 2px;
+  margin-top: 3px;
   background: ${(props) => props.color};
   border-radius: 0px 0px 10px 10px;
   border: none;
@@ -69,6 +70,9 @@ interface ISmallCard {
 }
 
 const SmallCard = ({ chemi, type, color }: ISmallCard) => {
+  const gotoOtherMbti = () => {
+    Router.push(chemi[2]);
+  };
   return (
     <Container>
       <SmallCardTitle>
@@ -78,8 +82,9 @@ const SmallCard = ({ chemi, type, color }: ISmallCard) => {
         <>
           <SmallCardText>{chemi[0]}</SmallCardText>
           <Image src={chemi[1]} />
-          {/* <Image src={type === 'best' ? chemi[1] : '/img/image 2.svg'} /> */}
-          <DetailButton color={color}>자세히 보기</DetailButton>
+          <DetailButton onClick={gotoOtherMbti} color={color}>
+            자세히 보기
+          </DetailButton>
         </>
       ) : (
         <>

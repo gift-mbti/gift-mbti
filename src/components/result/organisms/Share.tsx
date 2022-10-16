@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Router from 'next/router';
 import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
 
@@ -37,13 +38,30 @@ interface IShare {
 }
 
 const Share = ({ bgColor, color }: IShare) => {
+  const gotoHome = () => {
+    Router.push('/');
+  };
+  const gotoResults = () => {
+    Router.push('/results');
+  };
+
   return (
     <ShareContainer color={bgColor}>
       <ShareTitle>결과 공유하기</ShareTitle>
       <ShareButton color={color} />
       <ButtonContainer>
-        <Button color={color} text="다른 유형 보기" type="defult" />
-        <Button color={color} text="테스트 다시하기" type="reverse" />
+        <Button
+          onButtonClick={gotoResults}
+          color={color}
+          text="다른 유형 보기"
+          type="defult"
+        />
+        <Button
+          onButtonClick={gotoHome}
+          color={color}
+          text="테스트 다시하기"
+          type="reverse"
+        />
       </ButtonContainer>
     </ShareContainer>
   );
