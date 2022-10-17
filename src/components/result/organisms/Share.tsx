@@ -4,7 +4,6 @@ import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
 
 const ShareContainer = styled.section`
-  margin-top: 105px;
   height: 377px;
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@ const Share = ({ bgColor, color }: IShare) => {
     Router.push('/');
   };
   const gotoResults = () => {
-    Router.push('/results');
+    Router.push('/results/1');
   };
 
   return (

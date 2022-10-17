@@ -6,25 +6,27 @@ import Share from '../../components/result/organisms/Share';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
 
-const Wrapper = styled.main`
+export const Wrapper = styled.main`
   position: relative;
+  width: 375px;
+
   font-family: 'Pretendard';
   font-style: normal;
   white-space: pre-wrap;
 `;
 
-const Background = styled.img``;
+export const Background = styled.img``;
 
-const Container = styled.div`
+export const Container = styled.div`
   margin: auto;
   width: 292px;
 
   font-weight: 500;
   font-size: 15px;
-  // 줄 간격 물어보기
   line-height: 150%;
 
   color: #514e4e;
+  margin-bottom: 105px;
 `;
 
 const Result = ({ data }: any) => {
