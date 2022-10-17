@@ -153,9 +153,10 @@ const quiz = () => {
     if (steps !== 8) {
       setStep((step) => step + 1);
       setQuestion((question) => question - 1);
-    } else {
-      setFinish(true);
+      return;
     }
+
+    setFinish(true);
   };
 
   const handleClickModal = () => {
@@ -183,7 +184,9 @@ const quiz = () => {
             <ModalCancelBtn onClick={handleCancelBtn}>취소</ModalCancelBtn>
           </ModalWrapper>
         </Modal>
-        <QuestionCountContainer>남은 문항 {questions}</QuestionCountContainer>
+        <QuestionCountContainer>
+          {questions === 0 ? '결과확인!' : `남은 문항 ${questions}`}
+        </QuestionCountContainer>
       </QuizHeader>
       <QuizCardContainer>
         <QuizCard src="/img/quizCard.svg" alt="quizCard" />
