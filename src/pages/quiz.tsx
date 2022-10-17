@@ -8,6 +8,7 @@ import items from '../data/quiz';
 // import qna from '../data/quiz.json';
 import ModalStyle from '../styles/modalStyle';
 import calculateResult from '../utils/calculateResult';
+import QuizTitle from '../components/QuizTitle';
 
 const Wrapper = styled.div``;
 const QuizHeader = styled.div`
@@ -76,28 +77,28 @@ const ModalCancelBtn = styled.button`
   cursor: pointer;
 `;
 
-const QuizCardContainer = styled.div`
-  position: relative;
-  width: 375px;
-  height: 444px;
-`;
-const QuizCard = styled.img`
-  position: relative;
-`;
-const QuizCardContent = styled.p`
-  position: absolute;
-  width: 190px;
-  height: 106px;
-  text-align: center;
-  font-size: 17px;
-  line-height: 150%;
-  font-weight: 800;
-  // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: pre-wrap;
-`;
+// const QuizCardContainer = styled.div`
+//   position: relative;
+//   width: 375px;
+//   height: 444px;
+// `;
+// const QuizCard = styled.img`
+//   position: relative;
+// `;
+// const QuizCardContent = styled.p`
+//   position: absolute;
+//   width: 190px;
+//   height: 106px;
+//   text-align: center;
+//   font-size: 17px;
+//   line-height: 150%;
+//   font-weight: 800;
+//   // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   white-space: pre-wrap;
+// `;
 
 interface TypeState {
   [key: string]: number;
@@ -188,10 +189,11 @@ const quiz = () => {
           {questions === 0 ? '결과확인!' : `남은 문항 ${questions}`}
         </QuestionCountContainer>
       </QuizHeader>
-      <QuizCardContainer>
+      <QuizTitle title={currentData.title} />
+      {/* <QuizCardContainer>
         <QuizCard src="/img/quizCard.svg" alt="quizCard" />
         <QuizCardContent>{currentData.title}</QuizCardContent>
-      </QuizCardContainer>
+      </QuizCardContainer> */}
       {currentData.options.map((ans: any, i: number) => {
         return (
           <QuizArticle
