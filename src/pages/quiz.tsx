@@ -11,7 +11,9 @@ import calculateResult from '../utils/calculateResult';
 import QuizTitle from '../components/QuizTitle';
 import SEO from '../components/SEO';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  font-family: 'Pretendard';
+`;
 const QuizHeader = styled.div`
   display: flex;
   margin-top: 27px;
@@ -75,6 +77,7 @@ const ModalCancelBtn = styled.button`
   border: none;
   font-weight: 700;
   font-size: 13px;
+  color: black;
   cursor: pointer;
 `;
 
