@@ -1,13 +1,14 @@
 import Head from 'next/head';
 
 interface IType {
-  type: string;
+  text: string;
 }
 
-const SEO = ({ type }: IType) => {
+const SEO = ({ text }: IType) => {
+  // jaman - meta tag?
   return (
     <Head>
-      <title> {type} | Gift MBTI</title>
+      <title> {text} | Gift MBTI</title>
     </Head>
   );
 };

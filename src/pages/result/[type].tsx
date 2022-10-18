@@ -42,7 +42,7 @@ const Result = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO type={data.name} />
+      <SEO text={data.name} />
       <Background pic={backgroundImg}>
         <Card
           name={data.name}

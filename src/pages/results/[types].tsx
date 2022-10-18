@@ -7,7 +7,6 @@ import Card from '../../components/result/molecules/Card';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
 import Cards from '../../components/result/organisms/Cards';
-import Share from '../../components/result/organisms/Share';
 
 const Nav = styled.nav`
   width: 100%;
@@ -65,9 +64,6 @@ interface IData {
   worst: string[];
 }
 
-interface IProps {
-  data: IData;
-}
 const all = [
   '큰 그림 선물러',
   '브랜드 외길인생',
@@ -90,7 +86,7 @@ const Results = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO type={data.name} />
+      <SEO text={data.name} />
       <ButtonContainer color={data.color}>
         <Nav color={data.color}>
           {all.map((a, i) => {
