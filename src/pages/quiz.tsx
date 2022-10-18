@@ -77,6 +77,7 @@ const ModalCancelBtn = styled.button`
   border: none;
   font-weight: 700;
   font-size: 13px;
+  color: black;
   cursor: pointer;
 `;
 
