@@ -9,7 +9,6 @@ import Pick from '../../components/result/molecules/Pick';
 import Cards from '../../components/result/organisms/Cards';
 
 const Nav = styled.nav`
-  width: 100%;
   height: 62px;
   padding: 12px 20px 12px 20px;
   background: rgba(255, 255, 255, 0.28);
