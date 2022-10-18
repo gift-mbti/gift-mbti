@@ -177,7 +177,7 @@ const quiz = ({ data }: any) => {
       <SEO title="나의 선물 유형을 찾아서" description="" />
       <QuizHeader>
         <QuizLogoImg
-          src="/img/newQuizLogo.svg"
+          src="/img/newQuizLogo2.png"
           alt="quizLogo"
           onClick={handleClickModal}
         />
