@@ -37,7 +37,7 @@ export const Container = styled.div`
 
 const Result = ({ data }: any) => {
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
-  const starImg = `/img/dot/ic_dot${data.type}.svg`;
+  const starImg = `/img/dot/ic_dot_skyblue1.png`;
   const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
 
   return (
