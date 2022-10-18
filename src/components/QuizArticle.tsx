@@ -24,8 +24,8 @@ const QuizAnswerBtn1 = styled.button`
       color: #fd6463;
     }
   }
-
   &:active {
+    border: 2px solid #fd6463;
     background-color: #fd6463;
     color: white;
   }
