@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 const LoadingWrapper = styled.div`
   position: relative;
+  font-family: 'Pretendard';
 `;
 const LoadingTitle = styled.p`
   position: absolute;

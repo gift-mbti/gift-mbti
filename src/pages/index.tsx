@@ -40,6 +40,7 @@ const CardImg = styled.img`
 `;
 
 const StartButton = styled.button`
+  font-family: 'Pretendard';
   display: block;
   background-color: #fd6463;
   width: 319px;
