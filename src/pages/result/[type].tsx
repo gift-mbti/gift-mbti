@@ -42,7 +42,7 @@ const Result = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO title={data.name} />
+      <SEO title={data.name} description={`${data.name}의 선물 유형`} />
       <Background pic={backgroundImg}>
         <Card
           name={data.name}

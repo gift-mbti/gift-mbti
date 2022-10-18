@@ -85,7 +85,7 @@ const Results = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO title={data.name} />
+      <SEO title={data.name} description={`${data.name}의 선물 유형`} />
       <ButtonContainer color={data.color}>
         <Nav color={data.color}>
           {all.map((a, i) => {
@@ -162,12 +162,3 @@ export async function getStaticProps({ params }: any) {
     },
   };
 }
-
-// export async function getServerSideProps() {
-//   const { data } = await import('../../data/result.json');
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
