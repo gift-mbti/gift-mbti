@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Router from 'next/router';
+
 import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
 
@@ -44,10 +45,18 @@ const Share = ({ bgColor, color }: IShare) => {
     Router.push('/results/1');
   };
 
+  const onShareButtonClick = () => {
+    if (typeof window !== 'undefined') {
+      // Client-side-only code
+      // jaman - 누르면 링크가 복사됨 (복사되었다는 표시가 필요할거같음!)
+      navigator.clipboard.writeText(window.location.href);
+    }
+  };
+
   return (
     <ShareContainer color={bgColor}>
       <ShareTitle>결과 공유하기</ShareTitle>
-      <ShareButton color={color} />
+      <ShareButton onClick={onShareButtonClick} color={color} />
       <ButtonContainer>
         <Button
           onButtonClick={gotoResults}
