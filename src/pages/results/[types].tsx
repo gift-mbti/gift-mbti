@@ -75,7 +75,6 @@ const all = [
   '선물 나르시시스트',
 ];
 const Results = ({ data }: any) => {
-  // const [selected, setSelected] = useState<string>('');
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/dot/ic_dot${data.type}.svg`;
   const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
@@ -86,7 +85,7 @@ const Results = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO text={data.name} />
+      <SEO title={data.name} />
       <ButtonContainer color={data.color}>
         <Nav color={data.color}>
           {all.map((a, i) => {
@@ -163,6 +162,7 @@ export async function getStaticProps({ params }: any) {
     },
   };
 }
+
 // export async function getServerSideProps() {
 //   const { data } = await import('../../data/result.json');
 //   return {
