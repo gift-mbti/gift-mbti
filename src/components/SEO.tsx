@@ -1,17 +1,17 @@
 import Head from 'next/head';
 
-interface IType {
+interface Type {
   title: string;
-  description?: string;
-  url?: string;
-  image?: string;
+  // description?: string;
+  // url?: string;
+  // image?: string;
 }
 
-const SEO = ({ title, description, url, image }: IType) => {
+const SEO = ({ title }: Type) => {
   return (
     <Head>
       <title> {title} | Gift MBTI</title>
-      <meta
+      {/* <meta
         name="description"
         content={
           description ||
@@ -23,7 +23,7 @@ const SEO = ({ title, description, url, image }: IType) => {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url || 'https://jungleehabit.com'} />
       <meta property="og:image" content={image} />
-      <meta property="og:article:author" content="정리습관" />
+      <meta property="og:article:author" content="정리습관" /> */}
     </Head>
   );
 };
