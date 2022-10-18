@@ -44,6 +44,7 @@ const QuestionCountContainer = styled.p`
 const ModalWrapper = styled.div``;
 
 const ModalTitle = styled.p`
+  font-family: 'Pretendard';
   text-align: center;
   font-weight: 700;
   font-size: 16px;
