@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 const Title = styled.p`
   width: 195px;
   height: 70px;
+  font-weight: 800;
   margin: 0 auto;
   margin-top: 42px;
   text-align: center;

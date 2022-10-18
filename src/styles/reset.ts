@@ -5,6 +5,7 @@ const reset = css`
     box-sizing: border-box;
   }
   body {
+    font-family: 'Pretendard';
     background-color: #ffffff;
     color: black;
     width: 375px;
