@@ -6,12 +6,6 @@ import SEO from '../components/SEO';
 
 const Wrapper = styled.div``;
 const Title = styled.p`
-  @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
-    font-weight: 800;
-  }
   width: 195px;
   height: 70px;
   margin: 0 auto;
@@ -25,11 +19,6 @@ const Title = styled.p`
 
 const SubTitle = styled.p`
   //호진 TODO : font 굵기가 약간 이상한거 같음
-  @font-face {
-    font-family: Apple SD Gothic Neo;
-    src: url('/fonts/AppleSDGothicNeoT.woff');
-    font-weight: 600;
-  }
   width: 214px;
   line-height: 16px;
   font-size: 16px;
@@ -50,16 +39,11 @@ const CardImg = styled.img`
 `;
 
 const StartButton = styled.button`
-  @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
-  }
   display: block;
   background-color: #fd6463;
   width: 319px;
   height: 60px;
-  border-radius: 36.5px;
+  border-radius: 15px;
   border: none;
   margin: 0 auto;
   margin-top: 21px;
