@@ -80,7 +80,7 @@ const Error = () => {
       <ErrorTitle>너무 멀리왔어요!</ErrorTitle>
       <ErrorSubTitle>{errorSubTitle}</ErrorSubTitle>
       <Image
-        src="/img/errorImg2.png"
+        src="/img/errorImg5.jpg"
         width={375}
         height={568}
         style={{
