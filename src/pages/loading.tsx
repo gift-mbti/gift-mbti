@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import SEO from '../components/SEO';
 
 const LoadingWrapper = styled.div`
   position: relative;
-  font-family: 'Pretendard';
 `;
 const LoadingTitle = styled.p`
   position: absolute;
+  font-family: 'Pretendard';
   top: 274px;
   left: 115px;
   width: 144px;
@@ -40,6 +41,7 @@ const loading = () => {
 
   return (
     <LoadingWrapper>
+      <SEO title="Loading" description="loading" />
       <LoadingTitle>{loadingTitle}</LoadingTitle>
       <LoadingImg src="/img/loadingGif.gif" />
     </LoadingWrapper>

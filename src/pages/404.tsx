@@ -1,14 +1,15 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Router, { useRouter } from 'next/router';
+import SEO from '../components/SEO';
 
 const ErrorWrapper = styled.div`
   position: relative;
   font-family: 'Pretendard';
 `;
+
 const ErrorTitle = styled.p`
   height: 25px;
-  font-family: 'Pretendard';
   font-weight: 800;
   font-size: 25px;
   line-height: 100%;
@@ -19,7 +20,6 @@ const ErrorTitle = styled.p`
 
 const ErrorSubTitle = styled.p`
   height: 36px;
-  font-family: 'Pretendard';
   font-weight: 600;
   font-size: 13px;
   line-height: 140%;
@@ -77,6 +77,7 @@ const Error = () => {
   };
   return (
     <ErrorWrapper>
+      <SEO title="404" description="404" />
       <ErrorTitle>너무 멀리왔어요!</ErrorTitle>
       <ErrorSubTitle>{errorSubTitle}</ErrorSubTitle>
       <Image
