@@ -11,7 +11,6 @@ const Title = styled.p`
   margin: 0 auto;
   margin-top: 42px;
   text-align: center;
-  font-family: 'Pretendard';
   //호진 TODO : 30px하면 다음줄로 넘어감
   font-size: 29px;
   color: #000000;
@@ -22,7 +21,6 @@ const SubTitle = styled.p`
   width: 214px;
   line-height: 16px;
   font-size: 16px;
-  font-family: 'Apple SD Gothic Neo';
   color: #514e4e;
   margin: 0 auto;
   margin-top: 22px;
@@ -48,7 +46,6 @@ const StartButton = styled.button`
   margin: 0 auto;
   margin-top: 21px;
   margin-bottom: 75px;
-  font-family: Pretendard;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.02em;
