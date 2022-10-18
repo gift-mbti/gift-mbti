@@ -17,7 +17,7 @@ const QuizAnswerBtn1 = styled.button`
   white-space: pre-wrap;
   color: black;
   // 모바일에서는 hover가 되지 않는다 따라서 특정 사이즈 미만의 화면에서는 hover가 적용되지 않게 바꾼다.
-  @media (min-width: 450px) {
+  @media (min-width: 1200px) {
     &:hover {
       border: 2px solid #fd6463;
       background-color: #ffe9e9;
