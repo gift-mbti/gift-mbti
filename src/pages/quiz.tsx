@@ -171,16 +171,16 @@ const quiz = ({ data }: any) => {
   const handleMoveToHomeBtn = () => {
     router.push('/');
   };
-
   return (
     <Wrapper>
       <SEO title="나의 선물 유형을 찾아서" />
       <QuizHeader>
-        <QuizLogoImg
+        <img src="/img/newQuizLogo.svg" alt="quizLogo" />
+        {/* <QuizLogoImg
           src="/img/newQuizLogo.svg"
           alt="quizLogo"
           onClick={handleClickModal}
-        />
+        /> */}
         <Modal isOpen={open} style={ModalStyle} ariaHideApp={false}>
           <ModalWrapper>
             <ModalTitle>처음으로 돌아가시겠어요?</ModalTitle>
