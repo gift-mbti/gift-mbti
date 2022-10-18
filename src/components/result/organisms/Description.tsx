@@ -10,6 +10,8 @@ const TextContainer = styled.div`
 
 const Star = styled.img`
   position: absolute;
+  width: 12px;
+  height: 12px;
 `;
 
 const Title1 = styled.div`
