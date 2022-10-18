@@ -112,11 +112,11 @@ interface AnswerProps {
   };
 }
 
-const quiz = () => {
+const quiz = ({ data }: any) => {
   const [steps, setStep] = useState<number>(0);
   const [questions, setQuestion] = useState<number>(8);
   const [finish, setFinish] = useState<boolean>(false);
-  const currentData = useMemo(() => items[steps], [steps]);
+  const currentData = useMemo(() => data[steps], [steps]);
   const [open, isOpen] = useState<boolean>(false);
   const [type, setType] = useState<TypeState>({
     S: 0,
@@ -173,7 +173,7 @@ const quiz = () => {
 
   return (
     <Wrapper>
-      <SEO text="나의 선물 유형을 찾아서" />
+      <SEO title="나의 선물 유형을 찾아서" />
       <QuizHeader>
         <QuizLogoImg
           src="/img/quizLogo.svg"
@@ -192,10 +192,7 @@ const quiz = () => {
         </QuestionCountContainer>
       </QuizHeader>
       <QuizTitle title={currentData.title} />
-      {/* <QuizCardContainer>
-        <QuizCard src="/img/quizCard.svg" alt="quizCard" />
-        <QuizCardContent>{currentData.title}</QuizCardContent>
-      </QuizCardContainer> */}
+
       {currentData.options.map((ans: any, i: number) => {
         return (
           <QuizArticle
@@ -211,13 +208,11 @@ const quiz = () => {
 
 export default quiz;
 
-// 호진TODO: 왜 못불러 올까???
-// export const getStaticProps: GetStaticProps = async () => {
-//   const items = (await import('../data/quiz.json')).default;
-
-//   return {
-//     props: {
-//       items,
-//     },
-//   };
-// };
+export async function getServerSideProps() {
+  const { data } = await import('../data/quiz.json');
+  return {
+    props: {
+      data,
+    },
+  };
+}
