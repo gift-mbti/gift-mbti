@@ -3,6 +3,7 @@ import Router from 'next/router';
 
 const Container = styled.div`
   position: relative;
+  font-family: 'Pretendard';
   width: 136px;
   height: 204px;
   top: 34px;
@@ -59,7 +60,7 @@ const DetailButton = styled.button`
   color: #ffffff;
   cursor: pointer;
   :hover {
-    background-color: #cccccc;
+    opacity: 80%;
   }
 `;
 

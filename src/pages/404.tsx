@@ -4,6 +4,7 @@ import Router, { useRouter } from 'next/router';
 
 const ErrorWrapper = styled.div`
   position: relative;
+  font-family: 'Pretendard';
 `;
 const ErrorTitle = styled.p`
   height: 25px;
