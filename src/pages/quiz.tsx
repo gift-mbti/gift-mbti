@@ -13,6 +13,9 @@ import SEO from '../components/SEO';
 
 const Wrapper = styled.div`
   font-family: 'Pretendard';
+  @media (max-width: 700px) {
+    margin-bottom: 80px;
+  }
 `;
 const QuizHeader = styled.div`
   display: flex;
@@ -193,7 +196,7 @@ const quiz = ({ data }: any) => {
           </ModalWrapper>
         </Modal>
         <QuestionCountContainer>
-          {questions === 0 ? '결과확인!' : `남은 문항 ${questions}`}
+          {questions === 0 ? '마지막!' : `남은 문항 ${questions}`}
         </QuestionCountContainer>
       </QuizHeader>
       <QuizTitle title={currentData.title} />
