@@ -24,7 +24,11 @@ const QuizCardContent = styled.p`
   white-space: pre-wrap;
 `;
 
-const QuizTitle = ({ title }: any) => {
+interface TypeState {
+  title: string;
+}
+
+const QuizTitle = ({ title }: TypeState) => {
   return (
     <QuizCardContainer>
       <QuizCard src="/img/quizCard.svg" alt="quizCard" />

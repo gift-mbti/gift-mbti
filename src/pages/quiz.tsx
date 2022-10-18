@@ -128,6 +128,7 @@ const quiz = ({ data }: any) => {
   });
 
   const router = useRouter();
+  console.log(currentData);
 
   // finish의 상태가 바뀌면 계산을 진행한후에 결과값을 출력한다.
   useEffect(() => {
@@ -192,7 +193,6 @@ const quiz = ({ data }: any) => {
         </QuestionCountContainer>
       </QuizHeader>
       <QuizTitle title={currentData.title} />
-
       {currentData.options.map((ans: any, i: number) => {
         return (
           <QuizArticle
