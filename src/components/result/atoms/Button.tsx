@@ -34,7 +34,7 @@ interface IButton {
   onButtonClick?: () => void;
 }
 
-// jaman - 디자인 버튼 호버시 효과?
+// jaman - 처음으로 돌아가시겠습니까?
 const Button = ({ onButtonClick, color, text, type }: IButton) => {
   const result =
     type === 'defult' ? (
