@@ -50,7 +50,6 @@ const Share = ({ bgColor, color }: IShare) => {
   const onShareButtonClick = () => {
     if (typeof window !== 'undefined') {
       // Client-side-only code
-      // jaman - 누르면 링크가 복사됨 (복사되었다는 표시가 필요할거같음!)
       navigator.clipboard.writeText(window.location.href);
       enqueueSnackbar('링크가 복사되었습니다!');
     }
