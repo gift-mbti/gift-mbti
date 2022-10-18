@@ -12,7 +12,7 @@ const QuizCard = styled.img`
 const QuizCardContent = styled.p`
   position: absolute;
   width: 190px;
-  height: 106px;
+  /* height: 106px; */
   text-align: center;
   font-size: 17px;
   line-height: 150%;

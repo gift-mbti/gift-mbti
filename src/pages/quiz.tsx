@@ -19,9 +19,9 @@ const QuizHeader = styled.div`
 `;
 const QuizLogoImg = styled.img`
   /* 호진 TODO : logo 사이즈 다시 보기 */
-  width: 56.55px;
-  height: 50px;
-  margin-left: 22px;
+  width: 60px;
+  height: 32px;
+  margin-left: 40px;
   cursor: pointer;
 `;
 const QuestionCountContainer = styled.p`
@@ -177,7 +177,7 @@ const quiz = ({ data }: any) => {
       <SEO title="나의 선물 유형을 찾아서" description="" />
       <QuizHeader>
         <QuizLogoImg
-          src="/img/quizLogo.svg"
+          src="/img/newQuizLogo.svg"
           alt="quizLogo"
           onClick={handleClickModal}
         />

@@ -7,6 +7,7 @@ const ShareBtn = styled.button`
   border-radius: 50%;
   border: none;
   background: ${(props) => props.color};
+  cursor: pointer;
 `;
 const ShareImg = styled.img`
   width: 22px;
