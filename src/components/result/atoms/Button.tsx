@@ -18,6 +18,7 @@ const BasicButton = styled.button`
   line-height: 100%;
   text-align: center;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 const ColorReverseButton = styled(BasicButton)`

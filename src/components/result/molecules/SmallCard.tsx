@@ -57,7 +57,7 @@ const DetailButton = styled.button`
   line-height: 100%;
   text-align: center;
   color: #ffffff;
-
+  cursor: pointer;
   :hover {
     background-color: #cccccc;
   }
