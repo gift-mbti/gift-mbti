@@ -23,6 +23,7 @@ const ShareTitle = styled.div`
   font-size: 16px;
   line-height: 100%;
   text-align: center;
+  color: black;
 `;
 
 const ButtonContainer = styled.div`

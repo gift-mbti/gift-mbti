@@ -20,6 +20,7 @@ const SmallCardTitle = styled.p`
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
+  color: black;
 `;
 
 const SmallCardText = styled.p`
@@ -46,6 +47,7 @@ const Image = styled.img`
 
 const DetailButton = styled.button`
   position: relative;
+  font-family: 'Pretendard';
   width: 100%;
   height: 39px;
   margin-top: 3px;

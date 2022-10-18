@@ -35,6 +35,7 @@ const BestContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 
   font-weight: 700;
   font-size: 14px;
