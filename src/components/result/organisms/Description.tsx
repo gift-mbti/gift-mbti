@@ -25,6 +25,7 @@ const Title2 = styled.div`
   font-weight: 800;
   font-size: 22px;
   line-height: 100%;
+  color: #000000;
 `;
 
 const Description = ({ desc, star }: any) => {

@@ -14,7 +14,7 @@ import SEO from '../components/SEO';
 const Wrapper = styled.div`
   font-family: 'Pretendard';
   @media (max-width: 700px) {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
 `;
 const QuizHeader = styled.div`

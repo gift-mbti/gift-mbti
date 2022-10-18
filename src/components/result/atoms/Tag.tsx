@@ -9,7 +9,6 @@ const Tags = styled.div`
   border: 1.5px solid ${(props) => props.color};
   border-radius: 18px;
   justify-content: center;
-
   font-weight: 800;
   font-size: 12px;
   line-height: 148%;
