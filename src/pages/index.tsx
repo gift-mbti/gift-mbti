@@ -65,13 +65,19 @@ const Home = () => {
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
-        <Image
-          src="/img/homeCard.svg"
+        <img
+          src="/img/img_main.jpg"
+          alt="homeCard"
+          width="375px"
+          height="440px"
+        />
+        {/* <Image
+          src="/img/img_main2.png"
           alt="homeCard"
           width="375px"
           height="440px"
           priority
-        />
+        /> */}
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
       <Link href="/quiz">
