@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
 import Router, { useRouter } from 'next/router';
 import SEO from '../components/SEO';
 
@@ -64,6 +63,8 @@ const HomeBtn = styled.button`
   cursor: pointer;
 `;
 
+const ErrorImg = styled.img``;
+
 const Error = () => {
   const router = useRouter();
   const errorSubTitle = `일부러 찾아온게 아니라면 입력한 \n 주소를 다시 확인 해 주세요.`;
@@ -80,8 +81,8 @@ const Error = () => {
       <SEO title="404" description="404" />
       <ErrorTitle>너무 멀리왔어요!</ErrorTitle>
       <ErrorSubTitle>{errorSubTitle}</ErrorSubTitle>
-      <Image
-        src="/img/error.svg"
+      <ErrorImg
+        src="/img/errorImg5.jpg"
         width={375}
         height={568}
         style={{
