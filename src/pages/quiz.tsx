@@ -9,6 +9,7 @@ import items from '../data/quiz';
 import ModalStyle from '../styles/modalStyle';
 import calculateResult from '../utils/calculateResult';
 import QuizTitle from '../components/QuizTitle';
+import SEO from '../components/SEO';
 
 const Wrapper = styled.div``;
 const QuizHeader = styled.div`
@@ -172,6 +173,7 @@ const quiz = () => {
 
   return (
     <Wrapper>
+      <SEO text="나의 선물 유형을 찾아서" />
       <QuizHeader>
         <QuizLogoImg
           src="/img/quizLogo.svg"
