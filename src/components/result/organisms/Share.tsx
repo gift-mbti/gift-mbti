@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Router from 'next/router';
-
+import { useSnackbar } from 'notistack';
 import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
 
@@ -38,6 +38,8 @@ interface IShare {
 }
 
 const Share = ({ bgColor, color }: IShare) => {
+  const { enqueueSnackbar } = useSnackbar();
+
   const gotoHome = () => {
     Router.push('/');
   };
@@ -50,6 +52,7 @@ const Share = ({ bgColor, color }: IShare) => {
       // Client-side-only code
       // jaman - 누르면 링크가 복사됨 (복사되었다는 표시가 필요할거같음!)
       navigator.clipboard.writeText(window.location.href);
+      enqueueSnackbar('링크가 복사되었습니다!');
     }
   };
 

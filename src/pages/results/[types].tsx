@@ -19,6 +19,7 @@ const Nav = styled.nav`
   gap: 5px;
   overflow-x: scroll;
   overflow-y: hidden;
+  cursor: pointer;
   ::-webkit-scrollbar {
     display: none;
   }
