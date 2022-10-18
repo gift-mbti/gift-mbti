@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const DescContainer = styled.section`
-  margin-top: 34px;
+  margin-top: 50px;
 `;
 
 const TextContainer = styled.div`
@@ -13,7 +13,6 @@ const Star = styled.img`
 `;
 
 const Title1 = styled.div`
-  margin-top: 187px;
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;

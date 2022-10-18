@@ -6,27 +6,33 @@ import Share from '../../components/result/organisms/Share';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
 
+interface IBackground {
+  pic: string;
+}
+
 export const Wrapper = styled.main`
   position: relative;
   width: 375px;
-
   font-family: 'Pretendard';
   font-style: normal;
   white-space: pre-wrap;
 `;
 
-export const Background = styled.img``;
+export const Background = styled.div<IBackground>`
+  width: 375px;
+  height: 408.87px;
+  background-repeat: no-repeat;
+  background-image: url(${(props) => props.pic});
+`;
 
 export const Container = styled.div`
   margin: auto;
   width: 292px;
-
   font-weight: 500;
   font-size: 15px;
   line-height: 150%;
 
   color: #514e4e;
-  margin-bottom: 105px;
 `;
 
 const Result = ({ data }: any) => {
@@ -37,14 +43,14 @@ const Result = ({ data }: any) => {
   return (
     <Wrapper>
       <SEO type={data.name} />
-      <Background src={backgroundImg} alt="result_card" />
-      <Card
-        name={data.name}
-        cardImg={cardImg}
-        tags={data.tags}
-        color={data.color}
-      />
-
+      <Background pic={backgroundImg}>
+        <Card
+          name={data.name}
+          cardImg={cardImg}
+          tags={data.tags}
+          color={data.color}
+        />
+      </Background>
       <Container>
         <Description desc={data.desc} star={starImg} />
         <Pick

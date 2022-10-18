@@ -29,6 +29,10 @@ interface NavButtonProps {
   type: string;
 }
 
+const ButtonContainer = styled.div`
+  background-color: ${(props) => props.color};
+`;
+
 const NavButton = styled.div<NavButtonProps>`
   box-sizing: border-box;
   padding: 8px 16px;
@@ -87,29 +91,31 @@ const Results = ({ data }: any) => {
   return (
     <Wrapper>
       <SEO type={data.name} />
-      <Nav color={data.color}>
-        {all.map((a, i) => {
-          return (
-            <NavButton
-              key={i}
-              type={data.type === (i + 1).toString() ? '1' : '2'}
-              onClick={() => {
-                onButtonClick(i + 1);
-              }}
-            >
-              {a}
-            </NavButton>
-          );
-        })}
-      </Nav>
-      <Background src={backgroundImg} alt="result_card" />
-
-      <Card
-        name={data.name}
-        cardImg={cardImg}
-        tags={data.tags}
-        color={data.color}
-      />
+      <ButtonContainer color={data.color}>
+        <Nav color={data.color}>
+          {all.map((a, i) => {
+            return (
+              <NavButton
+                key={i}
+                type={data.type === (i + 1).toString() ? '1' : '2'}
+                onClick={() => {
+                  onButtonClick(i + 1);
+                }}
+              >
+                {a}
+              </NavButton>
+            );
+          })}
+        </Nav>
+      </ButtonContainer>
+      <Background pic={backgroundImg}>
+        <Card
+          name={data.name}
+          cardImg={cardImg}
+          tags={data.tags}
+          color={data.color}
+        />
+      </Background>
 
       <Container>
         <Description desc={data.desc} star={starImg} />
