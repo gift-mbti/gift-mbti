@@ -15,10 +15,17 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const BestContainer = styled.div`
-  margin: 23px 17px auto;
+
+interface BestContainerProps {
+  index: number;
+}
+const BestContainer = styled.div<BestContainerProps>`
+  width: 100%;
+  margin: 23px auto auto auto;
   margin-bottom: 17px;
   text-align: center;
+  border-left: ${(props) =>
+    props.index === 0 ? 'none' : '1.5px solid #0000001c'};
 `;
 
 const BestTitle = styled.p`
@@ -41,6 +48,7 @@ const BestContent = styled.div`
   font-size: 14px;
   line-height: 100%;
 `;
+
 const Dots = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,7 +84,7 @@ const Gifts = ({ color, bgColor, gift, giftTag }: IGifts) => {
     <PresentContainer color={bgColor}>
       {gift.map((g: string, index: number) => (
         <Container key={index}>
-          <BestContainer>
+          <BestContainer index={index}>
             <BestTitle color={color}>{index + 1}위</BestTitle>
             <BestContent>{g}</BestContent>
           </BestContainer>
