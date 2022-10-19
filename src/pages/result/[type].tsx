@@ -5,8 +5,9 @@ import Pick from '../../components/result/molecules/Pick';
 import Card from '../../components/result/molecules/Card';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
-import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
+
 import Share from '../../components/result/organisms/Share';
+import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
 
 interface IBackground {
   pic: string;

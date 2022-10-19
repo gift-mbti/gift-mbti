@@ -83,7 +83,7 @@ const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
       {chemi[0] ? (
         <>
           <SmallCardText>{chemi[0]}</SmallCardText>
-          <Image src={chemi[1]} />
+          <Image src={chemi[1]} alt="small avatar" />
           <DetailButton onClick={gotoOtherMbti} color={color}>
             자세히 보기
           </DetailButton>

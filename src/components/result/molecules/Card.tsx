@@ -81,7 +81,7 @@ const Card = ({ name, cardImg, tags, color }: CardProps) => {
     <Container>
       <CardTitle>{name}</CardTitle>
       <QR src="/img/Vector.svg" alt="result_card" />
-      <Image src={cardImg} />
+      <Image src={cardImg} alt="avatar" />
       <TagTitle>태그</TagTitle>
       <TagContainer>
         {tags.map((tag: string, index: number) => (
