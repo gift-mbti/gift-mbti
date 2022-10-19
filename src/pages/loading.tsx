@@ -8,7 +8,6 @@ const LoadingWrapper = styled.div`
 `;
 const LoadingTitle = styled.p`
   position: absolute;
-  font-family: 'Pretendard';
   top: 274px;
   left: 115px;
   width: 144px;
