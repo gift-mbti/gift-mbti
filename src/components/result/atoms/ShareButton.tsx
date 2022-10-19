@@ -10,10 +10,9 @@ const ShareBtn = styled.button`
   cursor: pointer;
 `;
 const ShareImg = styled.img`
-  width: 22px;
+  width: 19.5px;
   height: 19.5px;
-  left: 12.25px;
-  top: 12.25px;
+  margin: 12px auto;
 `;
 
 interface IShareButton {
