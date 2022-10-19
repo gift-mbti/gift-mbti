@@ -6,7 +6,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 19px;
-  margin-bottom: 105px;
+  margin-bottom: 85px;
 `;
 
 const Container = styled.div`

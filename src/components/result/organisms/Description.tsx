@@ -5,7 +5,10 @@ const DescContainer = styled.section`
 `;
 
 const TextContainer = styled.div`
-  margin-top: 22px;
+  margin-top: 18px;
+  font-size: 15px;
+  // jaman - 다시 물어보기
+  line-height: 150%;
 `;
 
 const Star = styled.img`

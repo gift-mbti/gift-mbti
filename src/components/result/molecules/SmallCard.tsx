@@ -6,8 +6,7 @@ const Container = styled.div`
   font-family: 'Pretendard';
   width: 136px;
   height: 204px;
-  top: 34px;
-
+  top: 14px;
   box-shadow: 0px 10px 35px rgba(120, 120, 120, 0.25);
   border-radius: 10px;
 `;
