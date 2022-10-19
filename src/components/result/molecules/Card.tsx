@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import Tag from '../atoms/Tag';
 
@@ -21,12 +22,14 @@ const CardTitle = styled.div`
   letter-spacing: 0.02em;
 `;
 
-const Image = styled.img`
-  position: relative;
-  width: 200px;
-  height: 140px;
-  margin: 0px 53px 0px;
-`;
+// const Image = styled.img`
+//   position: relative;
+//   width: 227px;
+//   height: 200px;
+//   /* left: 484px; */
+//   top: 0px;
+//   /* margin: 0px 26px 0px; */
+// `;
 
 const QR = styled.img`
   position: absolute;
@@ -69,12 +72,19 @@ const CardText = styled.p`
   color: #929090;
 `;
 
-const Card = ({ name, cardImg, tags, color }: any) => {
+interface CardProps {
+  name: string;
+  cardImg: string;
+  tags: string[];
+  color: string;
+}
+
+const Card = ({ name, cardImg, tags, color }: CardProps) => {
   return (
     <Container>
       <CardTitle>{name}</CardTitle>
       <QR src="/img/Vector.svg" alt="result_card" />
-      <Image src={cardImg} />
+      <Image src={cardImg} alt="avatar" />
       <TagTitle>태그</TagTitle>
       <TagContainer>
         {tags.map((tag: string, index: number) => (

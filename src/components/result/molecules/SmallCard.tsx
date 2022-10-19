@@ -6,8 +6,7 @@ const Container = styled.div`
   font-family: 'Pretendard';
   width: 136px;
   height: 204px;
-  top: 34px;
-
+  top: 14px;
   box-shadow: 0px 10px 35px rgba(120, 120, 120, 0.25);
   border-radius: 10px;
 `;
@@ -66,13 +65,13 @@ const DetailButton = styled.button`
   }
 `;
 
-interface ISmallCard {
-  chemi: string;
+interface SmallCardProps {
+  chemi: string[];
   type: string;
   color: string;
 }
 
-const SmallCard = ({ chemi, type, color }: ISmallCard) => {
+const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
   const gotoOtherMbti = () => {
     Router.push(chemi[2]);
   };
@@ -84,7 +83,7 @@ const SmallCard = ({ chemi, type, color }: ISmallCard) => {
       {chemi[0] ? (
         <>
           <SmallCardText>{chemi[0]}</SmallCardText>
-          <Image src={chemi[1]} />
+          <Image src={chemi[1]} alt="small avatar" />
           <DetailButton onClick={gotoOtherMbti} color={color}>
             자세히 보기
           </DetailButton>

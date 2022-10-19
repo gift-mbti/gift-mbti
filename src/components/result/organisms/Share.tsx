@@ -33,16 +33,16 @@ const ButtonContainer = styled.div`
   gap: 12px;
 `;
 
-interface IShare {
+interface ShareProps {
   bgColor: string;
   color: string;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-const Share = ({ bgColor, color }: IShare) => {
+const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
   const { enqueueSnackbar } = useSnackbar();
-
   const gotoHome = () => {
-    Router.push('/');
+    setIsOpen(true);
   };
   const gotoResults = () => {
     Router.push('/results/1');
