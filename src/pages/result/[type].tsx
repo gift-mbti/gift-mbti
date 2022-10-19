@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
 import Card from '../../components/result/molecules/Card';
-import Share from '../../components/result/organisms/Share';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
+import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
+import Share from '../../components/result/organisms/Share';
 
 interface IBackground {
   pic: string;
@@ -35,7 +37,26 @@ export const Container = styled.div`
   color: #514e4e;
 `;
 
-const Result = ({ data }: any) => {
+export interface ResultProps {
+  type: string;
+  name: string;
+  color: string;
+  tags: string[];
+  desc: string[];
+  midName: string;
+  bgColor: string;
+  gift: string[];
+  giftTag: string[];
+  best: string[];
+  worst: string[];
+}
+
+export interface DataProps {
+  data: ResultProps;
+}
+
+const Result = ({ data }: DataProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/dot/ic_dot_skyblue1.png`;
   const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
@@ -43,6 +64,12 @@ const Result = ({ data }: any) => {
   return (
     <Wrapper>
       <SEO title={data.name} description={`${data.name}의 선물 유형`} />
+      <GotoHomeModal
+        isOpen={isOpen}
+        onhandleOpen={() => {
+          setIsOpen(false);
+        }}
+      />
       <Background pic={backgroundImg}>
         <Card
           name={data.name}
@@ -62,7 +89,7 @@ const Result = ({ data }: any) => {
         />
         <Cards best={data.best} worst={data.worst} color={data.color} />
       </Container>
-      <Share bgColor={data.bgColor} color={data.color} />
+      <Share bgColor={data.bgColor} color={data.color} setIsOpen={setIsOpen} />
     </Wrapper>
   );
 };

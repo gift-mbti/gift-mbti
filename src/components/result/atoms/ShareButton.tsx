@@ -10,18 +10,17 @@ const ShareBtn = styled.button`
   cursor: pointer;
 `;
 const ShareImg = styled.img`
-  width: 22px;
+  width: 19.5px;
   height: 19.5px;
-  left: 12.25px;
-  top: 12.25px;
+  margin: 12px auto;
 `;
 
-interface IShareButton {
+interface ShareButtonProps {
   color: string;
   onClick: () => void;
 }
 
-const ShareButton = ({ onClick, color }: IShareButton) => {
+const ShareButton = ({ onClick, color }: ShareButtonProps) => {
   return (
     <ShareBtn onClick={onClick} color={color}>
       <ShareImg src="/img/share_button.svg" alt="share" />

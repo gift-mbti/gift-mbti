@@ -5,7 +5,10 @@ const DescContainer = styled.section`
 `;
 
 const TextContainer = styled.div`
-  margin-top: 22px;
+  margin-top: 18px;
+  font-size: 15px;
+  // jaman - 다시 물어보기
+  line-height: 150%;
 `;
 
 const Star = styled.img`
@@ -30,7 +33,12 @@ const Title2 = styled.div`
   color: #000000;
 `;
 
-const Description = ({ desc, star }: any) => {
+interface DescProps {
+  desc: string[];
+  star: string;
+}
+
+const Description = ({ desc, star }: DescProps) => {
   return (
     <DescContainer>
       <Title1>과연</Title1>
