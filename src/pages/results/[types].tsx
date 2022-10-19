@@ -7,6 +7,7 @@ import Card from '../../components/result/molecules/Card';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
 import Cards from '../../components/result/organisms/Cards';
+import FixedButton from '../../components/result/atoms/FixedButton';
 
 const Nav = styled.nav`
   height: 62px;
@@ -82,10 +83,14 @@ const Results = ({ data }: any) => {
   const onButtonClick = (i: number) => {
     Router.push(`/results/${i}`);
   };
+  const onGoHomeButtonClick = () => {
+    Router.push(`/`);
+  };
 
   return (
     <Wrapper>
       <SEO title={data.name} description={`${data.name}의 선물 유형`} />
+      <FixedButton text="테스트 다시하기" onButtonClick={onGoHomeButtonClick} />
       <ButtonContainer color={data.color}>
         <Nav color={data.color}>
           {all.map((a, i) => {
