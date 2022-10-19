@@ -30,11 +30,11 @@ const PickText = styled.p`
   transform: matrix(1, 0, 0, -1, 0, 0);
 `;
 
-interface IPickSign {
+interface PickSignProps {
   color: string;
 }
 
-const PickSign = ({ color }: IPickSign) => {
+const PickSign = ({ color }: PickSignProps) => {
   return (
     <PickContainer color={color}>
       <PickText>

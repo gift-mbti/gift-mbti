@@ -75,7 +75,7 @@ const TagContainer = styled.div`
 interface IGifts {
   color: string;
   bgColor: string;
-  gift: any;
+  gift: string[];
   giftTag: any;
 }
 

@@ -17,11 +17,11 @@ const Tags = styled.div`
   color: ${(props) => props.color};
 `;
 
-interface ITag {
+interface TagProps {
   color: string;
   text: string;
 }
-const Tag = ({ color, text }: ITag) => {
+const Tag = ({ color, text }: TagProps) => {
   return <Tags color={color}>{text}</Tags>;
 };
 

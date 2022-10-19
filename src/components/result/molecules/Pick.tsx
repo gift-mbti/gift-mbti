@@ -32,14 +32,14 @@ const Title4 = styled(Title3)`
   color: #000000;
 `;
 
-interface IPick {
+interface PickProps {
   midName: string;
   color: string;
   bgColor: string;
-  gift: any;
-  giftTag: any;
+  gift: string[];
+  giftTag: string[];
 }
-const Pick = ({ midName, color, bgColor, gift, giftTag }: IPick) => {
+const Pick = ({ midName, color, bgColor, gift, giftTag }: PickProps) => {
   return (
     <Wrapper>
       <Title3>{midName}</Title3>

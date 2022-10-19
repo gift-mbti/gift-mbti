@@ -27,7 +27,7 @@ const ColorReverseButton = styled(BasicButton)`
   background: ${(props) => props.color};
 `;
 
-interface IButton {
+interface ButtonProps {
   color: string;
   text: string;
   type: string;
@@ -35,7 +35,7 @@ interface IButton {
 }
 
 // jaman - 처음으로 돌아가시겠습니까?
-const Button = ({ onButtonClick, color, text, type }: IButton) => {
+const Button = ({ onButtonClick, color, text, type }: ButtonProps) => {
   const result =
     type === 'defult' ? (
       <BasicButton onClick={onButtonClick} color={color}>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Router from 'next/router';
 import SEO from '../../components/SEO';
-import { Background, Container, Wrapper } from '../result/[type]';
+import { Background, Container, DataProps, Wrapper } from '../result/[type]';
 import Card from '../../components/result/molecules/Card';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
@@ -50,20 +50,6 @@ const NavButton = styled.div<NavButtonProps>`
   flex-grow: 0;
 `;
 
-interface IData {
-  type: string;
-  name: string;
-  color: string;
-  tags: string[];
-  desc: string[];
-  midName: string;
-  bgColor: string;
-  gift: string;
-  giftTag: string[];
-  best: string[];
-  worst: string[];
-}
-
 const all = [
   '큰 그림 선물러',
   '브랜드 외길인생',
@@ -74,7 +60,8 @@ const all = [
   '프로 지갑지킴이',
   '선물 나르시시스트',
 ];
-const Results = ({ data }: any) => {
+
+const Results = ({ data }: DataProps) => {
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/dot/ic_dot${data.type}.svg`;
   const cardImg = `/img/CardImg/cardimg${data.type}.svg`;

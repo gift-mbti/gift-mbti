@@ -69,7 +69,14 @@ const CardText = styled.p`
   color: #929090;
 `;
 
-const Card = ({ name, cardImg, tags, color }: any) => {
+interface CardProps {
+  name: string;
+  cardImg: string;
+  tags: string[];
+  color: string;
+}
+
+const Card = ({ name, cardImg, tags, color }: CardProps) => {
   return (
     <Container>
       <CardTitle>{name}</CardTitle>

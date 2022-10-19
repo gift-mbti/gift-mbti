@@ -65,13 +65,13 @@ const DetailButton = styled.button`
   }
 `;
 
-interface ISmallCard {
-  chemi: string;
+interface SmallCardProps {
+  chemi: string[];
   type: string;
   color: string;
 }
 
-const SmallCard = ({ chemi, type, color }: ISmallCard) => {
+const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
   const gotoOtherMbti = () => {
     Router.push(chemi[2]);
   };

@@ -4,7 +4,6 @@ import Router from 'next/router';
 import { useSnackbar } from 'notistack';
 import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
-import GotoHomeModal from '../molecules/ GotoHomeModal';
 
 const ShareContainer = styled.section`
   height: 377px;
@@ -35,15 +34,14 @@ const ButtonContainer = styled.div`
   gap: 12px;
 `;
 
-interface IShare {
+interface ShareProps {
   bgColor: string;
   color: string;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-const Share = ({ bgColor, color }: IShare) => {
+const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
   const { enqueueSnackbar } = useSnackbar();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const gotoHome = () => {
     setIsOpen(true);
   };
@@ -63,12 +61,6 @@ const Share = ({ bgColor, color }: IShare) => {
     <ShareContainer color={bgColor}>
       <ShareTitle>결과 공유하기</ShareTitle>
       <ShareButton onClick={onShareButtonClick} color={color} />
-      <GotoHomeModal
-        isOpen={isOpen}
-        onhandleOpen={() => {
-          setIsOpen(false);
-        }}
-      />
       <ButtonContainer>
         <Button
           onButtonClick={gotoResults}

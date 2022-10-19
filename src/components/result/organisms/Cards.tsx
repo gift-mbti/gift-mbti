@@ -32,13 +32,13 @@ const Title4 = styled(Title3)`
   color: #000000;
 `;
 
-interface ICards {
-  best: string;
-  worst: string;
+interface Card {
+  best: string[];
+  worst: string[];
   color: string;
 }
 
-const Cards = ({ best, worst, color }: ICards) => {
+const Cards = ({ best, worst, color }: Card) => {
   return (
     <CardContainer>
       <Container>

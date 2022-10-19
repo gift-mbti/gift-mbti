@@ -15,12 +15,12 @@ const ShareImg = styled.img`
   margin: 12px auto;
 `;
 
-interface IShareButton {
+interface ShareButtonProps {
   color: string;
   onClick: () => void;
 }
 
-const ShareButton = ({ onClick, color }: IShareButton) => {
+const ShareButton = ({ onClick, color }: ShareButtonProps) => {
   return (
     <ShareBtn onClick={onClick} color={color}>
       <ShareImg src="/img/share_button.svg" alt="share" />
