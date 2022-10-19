@@ -59,7 +59,8 @@ const Result = ({ data }: DataProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/dot/ic_dot_skyblue1.png`;
-  const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
+  // const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
+  const cardImg = `/img/CardImg/img_result2.webp`;
 
   return (
     <Wrapper>
