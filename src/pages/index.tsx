@@ -4,9 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SEO from '../components/SEO';
 
-const Wrapper = styled.div`
-  font-family: 'Pretendard';
-`;
+const Wrapper = styled.div``;
 const Title = styled.p`
   width: 195px;
   height: 70px;

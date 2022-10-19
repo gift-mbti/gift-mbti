@@ -3,6 +3,7 @@ import { css, Global, ThemeProvider } from '@emotion/react';
 import { SnackbarProvider } from 'notistack';
 import reset from '../styles/reset';
 import theme from '../styles/themes';
+import '../styles/style.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

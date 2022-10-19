@@ -15,7 +15,6 @@ interface IBackground {
 export const Wrapper = styled.main`
   position: relative;
   width: 375px;
-  font-family: 'Pretendard';
   font-style: normal;
   white-space: pre-wrap;
 `;

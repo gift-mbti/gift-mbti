@@ -4,7 +4,6 @@ import SEO from '../components/SEO';
 
 const ErrorWrapper = styled.div`
   position: relative;
-  font-family: 'Pretendard';
 `;
 
 const ErrorTitle = styled.p`
