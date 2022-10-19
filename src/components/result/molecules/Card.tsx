@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import Tag from '../atoms/Tag';
 
@@ -21,12 +22,14 @@ const CardTitle = styled.div`
   letter-spacing: 0.02em;
 `;
 
-const Image = styled.img`
-  position: relative;
-  width: 200px;
-  height: 140px;
-  margin: 0px 53px 0px;
-`;
+// const Image = styled.img`
+//   position: relative;
+//   width: 227px;
+//   height: 200px;
+//   /* left: 484px; */
+//   top: 0px;
+//   /* margin: 0px 26px 0px; */
+// `;
 
 const QR = styled.img`
   position: absolute;
