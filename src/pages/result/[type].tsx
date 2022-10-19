@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
 import Card from '../../components/result/molecules/Card';
-import Share from '../../components/result/organisms/Share';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
 import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
+import Share from '../../components/result/organisms/Share';
 
 interface IBackground {
   pic: string;
