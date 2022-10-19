@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Router from 'next/router';
 import SEO from '../../components/SEO';
@@ -83,14 +82,11 @@ const Results = ({ data }: any) => {
   const onButtonClick = (i: number) => {
     Router.push(`/results/${i}`);
   };
-  const onGoHomeButtonClick = () => {
-    Router.push(`/`);
-  };
 
   return (
     <Wrapper>
       <SEO title={data.name} description={`${data.name}의 선물 유형`} />
-      <FixedButton text="테스트 다시하기" onButtonClick={onGoHomeButtonClick} />
+      <FixedButton text="테스트 다시하기" />
       <ButtonContainer color={data.color}>
         <Nav color={data.color}>
           {all.map((a, i) => {

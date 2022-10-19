@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Router from 'next/router';
 import { useSnackbar } from 'notistack';
 import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
+import GotoHomeModal from '../molecules/ GotoHomeModal';
 
 const ShareContainer = styled.section`
   height: 377px;
@@ -40,9 +42,10 @@ interface IShare {
 
 const Share = ({ bgColor, color }: IShare) => {
   const { enqueueSnackbar } = useSnackbar();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const gotoHome = () => {
-    Router.push('/');
+    setIsOpen(true);
   };
   const gotoResults = () => {
     Router.push('/results/1');
@@ -60,6 +63,12 @@ const Share = ({ bgColor, color }: IShare) => {
     <ShareContainer color={bgColor}>
       <ShareTitle>결과 공유하기</ShareTitle>
       <ShareButton onClick={onShareButtonClick} color={color} />
+      <GotoHomeModal
+        isOpen={isOpen}
+        onhandleOpen={() => {
+          setIsOpen(false);
+        }}
+      />
       <ButtonContainer>
         <Button
           onButtonClick={gotoResults}

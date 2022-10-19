@@ -84,7 +84,8 @@ const quiz = ({ data }: any) => {
   const [questions, setQuestion] = useState<number>(8);
   const [finish, setFinish] = useState<boolean>(false);
   const currentData = useMemo(() => data[steps], [steps]);
-  const [open, isOpen] = useState<boolean>(false);
+  // jaman - 변수명 isOpen -> setIsOpen으로 수정
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [type, setType] = useState<TypeState>({
     S: 0,
     N: 0,
@@ -130,13 +131,7 @@ const quiz = ({ data }: any) => {
   };
 
   const handleClickModal = () => {
-    isOpen(true);
-  };
-  const handleCancelBtn = () => {
-    isOpen(false);
-  };
-  const handleMoveToHomeBtn = () => {
-    router.push('/');
+    setIsOpen(true);
   };
 
   return (
@@ -149,9 +144,10 @@ const quiz = ({ data }: any) => {
           onClick={handleClickModal}
         />
         <GotoHomeModal
-          isOpen={open}
-          onBackClick={handleMoveToHomeBtn}
-          onCancelClick={handleCancelBtn}
+          isOpen={isOpen}
+          onhandleOpen={() => {
+            setIsOpen(false);
+          }}
         />
         <QuestionCountContainer>
           {questions === 0 ? '마지막!' : `남은 문항 ${questions}`}

@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
+import GotoHomeModal from '../molecules/ GotoHomeModal';
 
 const Button = styled.button`
   cursor: pointer;
@@ -22,14 +24,25 @@ const Button = styled.button`
 
 interface IButton {
   text: string;
-  onButtonClick: () => void;
 }
 
 // jaman - 처음으로 돌아가시겠습니까?
-const FixedButton = ({ text, onButtonClick }: IButton) => {
-  const result = <Button onClick={onButtonClick}>{text}</Button>;
-
-  return result;
+const FixedButton = ({ text }: IButton) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const onhandleOpen = () => {
+    setIsOpen(true);
+  };
+  return (
+    <div>
+      <Button onClick={onhandleOpen}>{text}</Button>
+      <GotoHomeModal
+        isOpen={isOpen}
+        onhandleOpen={() => {
+          setIsOpen(false);
+        }}
+      />
+    </div>
+  );
 };
 
 export default FixedButton;
