@@ -2,21 +2,18 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import Image from 'next/image';
+import SEO from '../components/SEO';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  font-family: 'Pretendard';
+`;
 const Title = styled.p`
-  @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
-    font-weight: 800;
-  }
   width: 195px;
   height: 70px;
+  font-weight: 800;
   margin: 0 auto;
   margin-top: 42px;
   text-align: center;
-  font-family: 'Pretendard';
   //호진 TODO : 30px하면 다음줄로 넘어감
   font-size: 29px;
   color: #000000;
@@ -24,15 +21,9 @@ const Title = styled.p`
 
 const SubTitle = styled.p`
   //호진 TODO : font 굵기가 약간 이상한거 같음
-  @font-face {
-    font-family: Apple SD Gothic Neo;
-    src: url('/fonts/AppleSDGothicNeoT.woff');
-    font-weight: 600;
-  }
   width: 214px;
   line-height: 16px;
   font-size: 16px;
-  font-family: 'Apple SD Gothic Neo';
   color: #514e4e;
   margin: 0 auto;
   margin-top: 22px;
@@ -49,21 +40,16 @@ const CardImg = styled.img`
 `;
 
 const StartButton = styled.button`
-  @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-      format('woff');
-  }
+  font-family: 'Pretendard';
   display: block;
   background-color: #fd6463;
   width: 319px;
   height: 60px;
-  border-radius: 36.5px;
+  border-radius: 15px;
   border: none;
   margin: 0 auto;
   margin-top: 21px;
   margin-bottom: 75px;
-  font-family: Pretendard;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -74,16 +60,23 @@ const StartButton = styled.button`
 const Home = () => {
   return (
     <Wrapper>
+      <SEO title="나의 선물 유형을 찾아서" description="" />
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
-        <Image
-          src="/img/homeCard.svg"
+        <img
+          src="/img/img_main.jpg"
+          alt="homeCard"
+          width="375px"
+          height="440px"
+        />
+        {/* <Image
+          src="/img/img_main2.png"
           alt="homeCard"
           width="375px"
           height="440px"
           priority
-        />
+        /> */}
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
       <Link href="/quiz">

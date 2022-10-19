@@ -11,6 +11,7 @@ const PickContainer = styled.div`
   background: ${(props) => props.color};
   border-radius: 0px 20px 20px 18px;
   transform: matrix(1, 0, 0, -1, 0, 0);
+  box-shadow: rgba(181, 181, 181, 0.25) 5px 0px 10px;
 `;
 
 const PickText = styled.p`

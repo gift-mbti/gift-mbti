@@ -8,8 +8,15 @@ import items from '../data/quiz';
 // import qna from '../data/quiz.json';
 import ModalStyle from '../styles/modalStyle';
 import calculateResult from '../utils/calculateResult';
+import QuizTitle from '../components/QuizTitle';
+import SEO from '../components/SEO';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  font-family: 'Pretendard';
+  @media (max-width: 700px) {
+    margin-bottom: 70px;
+  }
+`;
 const QuizHeader = styled.div`
   display: flex;
   margin-top: 27px;
@@ -17,9 +24,9 @@ const QuizHeader = styled.div`
 `;
 const QuizLogoImg = styled.img`
   /* 호진 TODO : logo 사이즈 다시 보기 */
-  width: 56.55px;
-  height: 50px;
-  margin-left: 22px;
+  width: 60px;
+  height: 32px;
+  margin-left: 40px;
   cursor: pointer;
 `;
 const QuestionCountContainer = styled.p`
@@ -40,6 +47,7 @@ const QuestionCountContainer = styled.p`
 const ModalWrapper = styled.div``;
 
 const ModalTitle = styled.p`
+  font-family: 'Pretendard';
   text-align: center;
   font-weight: 700;
   font-size: 16px;
@@ -73,31 +81,32 @@ const ModalCancelBtn = styled.button`
   border: none;
   font-weight: 700;
   font-size: 13px;
+  color: black;
   cursor: pointer;
 `;
 
-const QuizCardContainer = styled.div`
-  position: relative;
-  width: 375px;
-  height: 444px;
-`;
-const QuizCard = styled.img`
-  position: relative;
-`;
-const QuizCardContent = styled.p`
-  position: absolute;
-  width: 190px;
-  height: 106px;
-  text-align: center;
-  font-size: 17px;
-  line-height: 150%;
-  font-weight: 800;
-  // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: pre-wrap;
-`;
+// const QuizCardContainer = styled.div`
+//   position: relative;
+//   width: 375px;
+//   height: 444px;
+// `;
+// const QuizCard = styled.img`
+//   position: relative;
+// `;
+// const QuizCardContent = styled.p`
+//   position: absolute;
+//   width: 190px;
+//   height: 106px;
+//   text-align: center;
+//   font-size: 17px;
+//   line-height: 150%;
+//   font-weight: 800;
+//   // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   white-space: pre-wrap;
+// `;
 
 interface TypeState {
   [key: string]: number;
@@ -110,11 +119,11 @@ interface AnswerProps {
   };
 }
 
-const quiz = () => {
+const quiz = ({ data }: any) => {
   const [steps, setStep] = useState<number>(0);
   const [questions, setQuestion] = useState<number>(8);
   const [finish, setFinish] = useState<boolean>(false);
-  const currentData = useMemo(() => items[steps], [steps]);
+  const currentData = useMemo(() => data[steps], [steps]);
   const [open, isOpen] = useState<boolean>(false);
   const [type, setType] = useState<TypeState>({
     S: 0,
@@ -126,6 +135,7 @@ const quiz = () => {
   });
 
   const router = useRouter();
+  console.log(currentData);
 
   // finish의 상태가 바뀌면 계산을 진행한후에 결과값을 출력한다.
   useEffect(() => {
@@ -153,9 +163,10 @@ const quiz = () => {
     if (steps !== 8) {
       setStep((step) => step + 1);
       setQuestion((question) => question - 1);
-    } else {
-      setFinish(true);
+      return;
     }
+
+    setFinish(true);
   };
 
   const handleClickModal = () => {
@@ -170,9 +181,10 @@ const quiz = () => {
 
   return (
     <Wrapper>
+      <SEO title="나의 선물 유형을 찾아서" description="" />
       <QuizHeader>
         <QuizLogoImg
-          src="/img/quizLogo.svg"
+          src="/img/newQuizLogo2.png"
           alt="quizLogo"
           onClick={handleClickModal}
         />
@@ -183,12 +195,11 @@ const quiz = () => {
             <ModalCancelBtn onClick={handleCancelBtn}>취소</ModalCancelBtn>
           </ModalWrapper>
         </Modal>
-        <QuestionCountContainer>남은 문항 {questions}</QuestionCountContainer>
+        <QuestionCountContainer>
+          {questions === 0 ? '마지막!' : `남은 문항 ${questions}`}
+        </QuestionCountContainer>
       </QuizHeader>
-      <QuizCardContainer>
-        <QuizCard src="/img/quizCard.svg" alt="quizCard" />
-        <QuizCardContent>{currentData.title}</QuizCardContent>
-      </QuizCardContainer>
+      <QuizTitle title={currentData.title} />
       {currentData.options.map((ans: any, i: number) => {
         return (
           <QuizArticle
@@ -204,13 +215,11 @@ const quiz = () => {
 
 export default quiz;
 
-// 호진TODO: 왜 못불러 올까???
-// export const getStaticProps: GetStaticProps = async () => {
-//   const items = (await import('../data/quiz.json')).default;
-
-//   return {
-//     props: {
-//       items,
-//     },
-//   };
-// };
+export async function getServerSideProps() {
+  const { data } = await import('../data/quiz.json');
+  return {
+    props: {
+      data,
+    },
+  };
+}

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 const QuizAnswerBtn1 = styled.button`
+  font-family: 'Pretendard';
   display: block;
   position: relative;
   width: 293px;
@@ -17,15 +18,15 @@ const QuizAnswerBtn1 = styled.button`
   white-space: pre-wrap;
   color: black;
   // 모바일에서는 hover가 되지 않는다 따라서 특정 사이즈 미만의 화면에서는 hover가 적용되지 않게 바꾼다.
-  @media (min-width: 450px) {
+  @media (min-width: 1400px) {
     &:hover {
       border: 2px solid #fd6463;
       background-color: #ffe9e9;
       color: #fd6463;
     }
   }
-
   &:active {
+    border: 2px solid #fd6463;
     background-color: #fd6463;
     color: white;
   }

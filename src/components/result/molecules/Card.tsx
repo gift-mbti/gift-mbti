@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import Tag from '../atoms/Tag';
 
 const Container = styled.section`
-  position: absolute;
+  position: relative;
   width: 279px;
   height: 389px;
   left: 48px;
-  top: 46px;
+  top: 34px;
 
   background: #ffffff;
   box-shadow: 0px 10px 40px rgba(106, 106, 106, 0.25);
@@ -15,9 +15,7 @@ const Container = styled.section`
 
 const CardTitle = styled.div`
   position: relative;
-  margin: 30px 26px 14px;
-  height: 55px;
-
+  padding: 30px 26px 14px;
   font-weight: 800;
   font-size: 25px;
   letter-spacing: 0.02em;
@@ -27,7 +25,7 @@ const Image = styled.img`
   position: relative;
   width: 200px;
   height: 140px;
-  margin: 18px 53px 0px;
+  margin: 0px 53px 0px;
 `;
 
 const QR = styled.img`

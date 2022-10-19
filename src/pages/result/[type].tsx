@@ -6,22 +6,30 @@ import Share from '../../components/result/organisms/Share';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
 
-const Wrapper = styled.main`
+interface IBackground {
+  pic: string;
+}
+
+export const Wrapper = styled.main`
   position: relative;
+  width: 375px;
   font-family: 'Pretendard';
   font-style: normal;
   white-space: pre-wrap;
 `;
 
-const Background = styled.img``;
+export const Background = styled.div<IBackground>`
+  width: 375px;
+  height: 408.87px;
+  background-repeat: no-repeat;
+  background-image: url(${(props) => props.pic});
+`;
 
-const Container = styled.div`
+export const Container = styled.div`
   margin: auto;
   width: 292px;
-
   font-weight: 500;
   font-size: 15px;
-  // 줄 간격 물어보기
   line-height: 150%;
 
   color: #514e4e;
@@ -29,20 +37,20 @@ const Container = styled.div`
 
 const Result = ({ data }: any) => {
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
-  const starImg = `/img/dot/ic_dot${data.type}.svg`;
+  const starImg = `/img/dot/ic_dot_skyblue1.png`;
   const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
 
   return (
     <Wrapper>
-      <SEO type={data.name} />
-      <Background src={backgroundImg} alt="result_card" />
-      <Card
-        name={data.name}
-        cardImg={cardImg}
-        tags={data.tags}
-        color={data.color}
-      />
-
+      <SEO title={data.name} description={`${data.name}의 선물 유형`} />
+      <Background pic={backgroundImg}>
+        <Card
+          name={data.name}
+          cardImg={cardImg}
+          tags={data.tags}
+          color={data.color}
+        />
+      </Background>
       <Container>
         <Description desc={data.desc} star={starImg} />
         <Pick

@@ -7,6 +7,7 @@ const ShareBtn = styled.button`
   border-radius: 50%;
   border: none;
   background: ${(props) => props.color};
+  cursor: pointer;
 `;
 const ShareImg = styled.img`
   width: 22px;
@@ -17,11 +18,12 @@ const ShareImg = styled.img`
 
 interface IShareButton {
   color: string;
+  onClick: () => void;
 }
 
-const ShareButton = ({ color }: IShareButton) => {
+const ShareButton = ({ onClick, color }: IShareButton) => {
   return (
-    <ShareBtn color={color}>
+    <ShareBtn onClick={onClick} color={color}>
       <ShareImg src="/img/share_button.svg" alt="share" />
     </ShareBtn>
   );
