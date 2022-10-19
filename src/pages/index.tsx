@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import Image from 'next/image';
 import SEO from '../components/SEO';
 
 const Wrapper = styled.div``;
