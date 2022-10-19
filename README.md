@@ -32,6 +32,55 @@ UI, 화면구성 I Figma (디자이너와 협업!)
 <br/>
 
 ## 4. 폴더 구조 🗂 
+
+```
+.
+├── components
+│   ├── QuizArticle.tsx
+│   ├── QuizTitle.tsx
+│   ├── SEO.tsx
+│   └── result
+│       ├── atoms
+│       │   ├── Button.tsx
+│       │   ├── FixedButton.tsx
+│       │   ├── PickSign.tsx
+│       │   ├── ShareButton.tsx
+│       │   └── Tag.tsx
+│       ├── molecules
+│       │   ├──  GotoHomeModal.tsx
+│       │   ├── Card.tsx
+│       │   ├── Gifts.tsx
+│       │   ├── Pick.tsx
+│       │   └── SmallCard.tsx
+│       └── organisms
+│           ├── Cards.tsx
+│           ├── Description.tsx
+│           └── Share.tsx
+├── data
+│   ├── quiz.json
+│   ├── quiz.ts
+│   └── result.json
+├── pages
+│   ├── 404.tsx
+│   ├── _app.tsx
+│   ├── index.tsx
+│   ├── loading.tsx
+│   ├── quiz.tsx
+│   ├── result
+│   │   └── [type].tsx
+│   └── results
+│       └── [types].tsx
+├── store
+├── styles
+│   ├── emotion.d.ts
+│   ├── modalStyle.ts
+│   ├── reset.ts
+│   ├── style.css
+│   └── themes.ts
+└── utils
+    └── calculateResult.ts
+
+```
 <br/>
 
 ## 5. Why & How
