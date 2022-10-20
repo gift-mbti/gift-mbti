@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import Router from 'next/router';
 
 const Container = styled.div`
@@ -37,11 +38,13 @@ const NonCardText = styled(SmallCardText)`
   margin: 34px 20px 41px;
 `;
 
-const Image = styled.img`
-  position: relative;
-  width: 72px;
-  height: 60px;
-  margin: 12px 45px 5px;
+const ImgContainer = styled.div`
+  box-sizing: border-box;
+  width: 101px;
+  height: 80px;
+  margin-top: 3px;
+  margin-left: auto;
+  /* background-color: red; */
 `;
 
 const DetailButton = styled.button`
@@ -83,7 +86,9 @@ const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
       {chemi[0] ? (
         <>
           <SmallCardText>{chemi[0]}</SmallCardText>
-          <Image src={chemi[1]} alt="small avatar" />
+          <ImgContainer>
+            <Image src={chemi[1]} width={90} height={75} alt="small avatar" />
+          </ImgContainer>
           <DetailButton onClick={gotoOtherMbti} color={color}>
             자세히 보기
           </DetailButton>
