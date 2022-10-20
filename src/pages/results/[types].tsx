@@ -63,7 +63,7 @@ const all = [
 
 const Results = ({ data }: DataProps) => {
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
-  const starImg = `/img/dot/ic_dot${data.type}.svg`;
+  const starImg = `/img/Dot/dot${data.type}.jpg`;
   const cardImg = `/img/Avatar/image${data.type}.jpg`;
 
   const onButtonClick = (i: number) => {
@@ -106,6 +106,7 @@ const Results = ({ data }: DataProps) => {
           midName={data.midName}
           color={data.color}
           bgColor={data.bgColor}
+          borderColor={data.borderColor}
           gift={data.gift}
           giftTag={data.giftTag}
         />

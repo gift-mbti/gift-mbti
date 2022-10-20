@@ -36,16 +36,30 @@ interface PickProps {
   midName: string;
   color: string;
   bgColor: string;
+  borderColor: string;
   gift: string[];
   giftTag: string[];
 }
-const Pick = ({ midName, color, bgColor, gift, giftTag }: PickProps) => {
+const Pick = ({
+  midName,
+  color,
+  bgColor,
+  borderColor,
+  gift,
+  giftTag,
+}: PickProps) => {
   return (
     <Wrapper>
       <Title3>{midName}</Title3>
       <Title4>어떤 선물을 주고 받을까요? </Title4>
       <PickSign color={color} />
-      <Gifts bgColor={bgColor} color={color} gift={gift} giftTag={giftTag} />
+      <Gifts
+        borderColor={borderColor}
+        bgColor={bgColor}
+        color={color}
+        gift={gift}
+        giftTag={giftTag}
+      />
       <Caution>*자체 설문조사를 통해 자료를 수집하였습니다.</Caution>
     </Wrapper>
   );
