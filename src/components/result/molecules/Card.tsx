@@ -87,7 +87,7 @@ const Card = ({ name, cardImg, tags, color }: CardProps) => {
       <TagTitle>태그</TagTitle>
       <TagContainer>
         {tags.map((tag: string, index: number) => (
-          <Tag key={index} color={color} text={tag} />
+          <Tag key={index} borderColor={color} color={color} text={tag} />
         ))}
       </TagContainer>
       <CardText>

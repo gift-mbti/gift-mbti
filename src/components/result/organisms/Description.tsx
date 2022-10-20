@@ -6,13 +6,13 @@ const DescContainer = styled.section`
 
 const TextContainer = styled.div`
   margin-top: 18px;
-  font-size: 15px;
-  // jaman - 다시 물어보기
-  line-height: 150%;
+  width: 294px;
 `;
 
 const Star = styled.img`
-  position: absolute;
+  position: relative;
+  top: 5px;
+  left: -1px;
   width: 24px;
   height: 24px;
 `;
