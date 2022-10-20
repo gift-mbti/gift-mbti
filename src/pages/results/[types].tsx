@@ -64,7 +64,7 @@ const all = [
 const Results = ({ data }: DataProps) => {
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/dot/ic_dot${data.type}.svg`;
-  const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
+  const cardImg = `/img/Avatar/image${data.type}.jpg`;
 
   const onButtonClick = (i: number) => {
     Router.push(`/results/${i}`);

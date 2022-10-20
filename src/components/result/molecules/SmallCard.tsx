@@ -28,7 +28,7 @@ const SmallCardText = styled.p`
   margin-left: 20px;
   font-weight: 500;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 130%;
 `;
 
 const NonCardText = styled(SmallCardText)`
@@ -39,8 +39,8 @@ const NonCardText = styled(SmallCardText)`
 
 const Image = styled.img`
   position: relative;
-  width: 76px;
-  height: 59px;
+  width: 72px;
+  height: 60px;
   margin: 12px 45px 5px;
 `;
 

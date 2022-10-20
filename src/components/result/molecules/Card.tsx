@@ -8,7 +8,6 @@ const Container = styled.section`
   height: 389px;
   left: 48px;
   top: 34px;
-
   background: #ffffff;
   box-shadow: 0px 10px 40px rgba(106, 106, 106, 0.25);
   border-radius: 20px;
@@ -16,20 +15,18 @@ const Container = styled.section`
 
 const CardTitle = styled.div`
   position: relative;
-  padding: 30px 26px 14px;
+  padding: 30px 26px 10px;
   font-weight: 800;
   font-size: 25px;
   letter-spacing: 0.02em;
+  z-index: 1;
 `;
 
-// const Image = styled.img`
-//   position: relative;
-//   width: 227px;
-//   height: 200px;
-//   /* left: 484px; */
-//   top: 0px;
-//   /* margin: 0px 26px 0px; */
-// `;
+const ImageContainer = styled.div`
+  position: absolute;
+  top: 63px;
+  left: 26px;
+`;
 
 const QR = styled.img`
   position: absolute;
@@ -40,11 +37,11 @@ const QR = styled.img`
 `;
 
 export const TagTitle = styled.div`
-  position: relative;
+  position: absolute;
+  top: 248px;
+  left: 26px;
   width: 25px;
   height: 14px;
-  margin: 5px 26px;
-
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
@@ -53,19 +50,19 @@ export const TagTitle = styled.div`
 
 export const TagContainer = styled.div`
   position: absolute;
+  left: 26px;
+  top: 274px;
   display: flex;
   flex-direction: row;
   gap: 5px;
-
-  margin: 12px 0px 0px 26px;
 `;
 
-// 디자인 : 줄간격이 이상함
 const CardText = styled.p`
-  position: relative;
+  position: absolute;
   width: 200px;
   height: 30px;
-  margin: 60px 26px 0;
+  top: 322px;
+  left: 26px;
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
@@ -84,7 +81,9 @@ const Card = ({ name, cardImg, tags, color }: CardProps) => {
     <Container>
       <CardTitle>{name}</CardTitle>
       <QR src="/img/Vector.svg" alt="result_card" />
-      <Image src={cardImg} alt="avatar" />
+      <ImageContainer>
+        <Image src={cardImg} width={227} height={200} alt="avatar" />
+      </ImageContainer>
       <TagTitle>태그</TagTitle>
       <TagContainer>
         {tags.map((tag: string, index: number) => (
