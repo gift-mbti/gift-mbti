@@ -2,17 +2,25 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 import GotoHomeModal from '../molecules/ GotoHomeModal';
 
+const Container = styled.div`
+  position: fixed;
+  bottom: 14px;
+  width: 375px;
+  height: 70px;
+  z-index: 2;
+`;
+
 const Button = styled.button`
   cursor: pointer;
-  position: fixed;
-  left: 37.86%;
-  right: 37.77%;
-  top: 91.85%;
-  bottom: 1.68%;
+  display: flex;
+  margin: 14px 42px;
+  justify-content: center;
+  align-items: center;
+  width: 291px;
+  height: 54px;
   border: none;
   background: #000000;
   border-radius: 15px;
-  z-index: 1;
 
   font-family: 'Pretendard';
   font-style: normal;
@@ -33,7 +41,7 @@ const FixedButton = ({ text }: ButtonProps) => {
     setIsOpen(true);
   };
   return (
-    <div>
+    <Container>
       <Button onClick={onhandleOpen}>{text}</Button>
       <GotoHomeModal
         isOpen={isOpen}
@@ -41,7 +49,7 @@ const FixedButton = ({ text }: ButtonProps) => {
           setIsOpen(false);
         }}
       />
-    </div>
+    </Container>
   );
 };
 
