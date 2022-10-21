@@ -11,7 +11,7 @@ const PresentContainer = styled.div`
   border-radius: 10px;
 `;
 const Container = styled.div`
-  flex: 33%;
+  flex: 33.4%;
   display: flex;
   flex-direction: column;
 `;
@@ -75,11 +75,12 @@ const TagContainer = styled.div`
 interface IGifts {
   color: string;
   bgColor: string;
+  borderColor: string;
   gift: string[];
   giftTag: any;
 }
 
-const Gifts = ({ color, bgColor, gift, giftTag }: IGifts) => {
+const Gifts = ({ color, bgColor, borderColor, gift, giftTag }: IGifts) => {
   return (
     <PresentContainer color={bgColor}>
       {gift.map((g: string, index: number) => (
@@ -94,7 +95,12 @@ const Gifts = ({ color, bgColor, gift, giftTag }: IGifts) => {
           </Dots>
           <TagContainer>
             {giftTag[index].map((text: string, idx: number) => (
-              <Tag key={idx} color={color} text={text} />
+              <Tag
+                key={idx}
+                borderColor={borderColor}
+                color={color}
+                text={text}
+              />
             ))}
           </TagContainer>
         </Container>

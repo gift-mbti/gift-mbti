@@ -1,12 +1,17 @@
 import styled from '@emotion/styled';
 
-const Tags = styled.div`
+interface TagStyleProps {
+  color: string;
+  border: string;
+}
+
+const Tags = styled.div<TagStyleProps>`
   padding: 5px 10px;
   gap: 10px;
   margin: auto;
 
   box-sizing: border-box;
-  border: 1.5px solid ${(props) => props.color};
+  border: 1.5px solid ${(props) => props.border};
   border-radius: 18px;
   justify-content: center;
   font-weight: 800;
@@ -19,10 +24,15 @@ const Tags = styled.div`
 
 interface TagProps {
   color: string;
+  borderColor: string;
   text: string;
 }
-const Tag = ({ color, text }: TagProps) => {
-  return <Tags color={color}>{text}</Tags>;
+const Tag = ({ color, borderColor, text }: TagProps) => {
+  return (
+    <Tags color={color} border={borderColor}>
+      {text}
+    </Tags>
+  );
 };
 
 export default Tag;

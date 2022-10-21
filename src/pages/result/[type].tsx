@@ -45,6 +45,7 @@ export interface ResultProps {
   desc: string[];
   midName: string;
   bgColor: string;
+  borderColor: string;
   gift: string[];
   giftTag: string[];
   best: string[];
@@ -58,9 +59,8 @@ export interface DataProps {
 const Result = ({ data }: DataProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const backgroundImg = `/img/background/bg_result${data.type}.svg`;
-  const starImg = `/img/dot/ic_dot_skyblue1.png`;
-  // const cardImg = `/img/CardImg/cardimg${data.type}.svg`;
-  const cardImg = `/img/CardImg/img_result2.webp`;
+  const starImg = `/img/Dot/dot${data.type}.jpg`;
+  const cardImg = `/img/Avatar/image${data.type}.jpg`;
 
   return (
     <Wrapper>
@@ -85,6 +85,7 @@ const Result = ({ data }: DataProps) => {
           midName={data.midName}
           color={data.color}
           bgColor={data.bgColor}
+          borderColor={data.borderColor}
           gift={data.gift}
           giftTag={data.giftTag}
         />
