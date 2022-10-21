@@ -111,6 +111,7 @@ export async function getStaticPaths() {
   };
 }
 
+// jaman - any 타입 제거하기
 export async function getStaticProps({ params }: any) {
   const { data } = await import('../../data/result.json');
 
