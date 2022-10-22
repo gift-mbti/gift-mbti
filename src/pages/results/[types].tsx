@@ -50,6 +50,11 @@ const NavButton = styled.div<NavButtonProps>`
   flex-grow: 0;
 `;
 
+const Bumper = styled.div`
+  width: 100%;
+  height: 60px;
+`;
+
 const all = [
   '큰 그림 선물러',
   '브랜드 외길인생',
@@ -111,6 +116,7 @@ const Results = ({ data }: DataProps) => {
           giftTag={data.giftTag}
         />
         <Cards best={data.best} worst={data.worst} color={data.color} />
+        <Bumper />
       </Container>
     </Wrapper>
   );

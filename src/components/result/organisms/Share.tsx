@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import Router from 'next/router';
-import { useSnackbar } from 'notistack';
+import { useState } from 'react';
 import Button from '../atoms/Button';
 import ShareButton from '../atoms/ShareButton';
+import CopyAlert from '../molecules/CopyAlert';
 
 const ShareContainer = styled.section`
   height: 377px;
@@ -40,7 +41,8 @@ interface ShareProps {
 }
 
 const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
-  const { enqueueSnackbar } = useSnackbar();
+  const [isAlertOpen, setIsAlertOpen] = useState<boolean>(false);
+
   const gotoHome = () => {
     setIsOpen(true);
   };
@@ -52,7 +54,10 @@ const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
     if (typeof window !== 'undefined') {
       // Client-side-only code
       navigator.clipboard.writeText(window.location.href);
-      enqueueSnackbar('링크가 복사되었습니다!');
+      setIsAlertOpen(true);
+      setTimeout(() => {
+        setIsAlertOpen(false);
+      }, 1500);
     }
   };
 
@@ -74,6 +79,7 @@ const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
           type="reverse"
         />
       </ButtonContainer>
+      {isAlertOpen && <CopyAlert />}
     </ShareContainer>
   );
 };
