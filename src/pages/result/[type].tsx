@@ -18,6 +18,7 @@ export const Wrapper = styled.main`
   width: 375px;
   font-style: normal;
   white-space: pre-wrap;
+  /* margin-bottom: 140px; */
 `;
 
 export const Background = styled.div<IBackground>`

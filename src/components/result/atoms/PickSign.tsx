@@ -23,7 +23,7 @@ const PickText = styled.p`
 
   font-weight: 700;
   font-size: 12px;
-  line-height: 100%;
+  line-height: 110%;
   text-align: center;
 
   color: #ffffff;
