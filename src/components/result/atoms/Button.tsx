@@ -5,7 +5,6 @@ const BasicButton = styled.button`
   margin: auto;
   width: 291px;
   height: 62px;
-  opacity: 0.8;
 
   border-radius: 15px;
   border: 2px solid ${(props) => props.color};

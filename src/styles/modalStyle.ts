@@ -8,6 +8,8 @@ const ModalStyle = {
     padding: '0',
     margin: 'auto',
     overflow: 'auto',
+    borderRadius: '9px',
+    border: 'none',
   },
 };
 
