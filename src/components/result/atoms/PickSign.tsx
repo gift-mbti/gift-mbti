@@ -6,8 +6,6 @@ const PickContainer = styled.div`
   height: 48px;
   left: 243px;
   bottom: 270px;
-  z-index: 1;
-
   background: ${(props) => props.color};
   border-radius: 0px 20px 20px 18px;
   transform: matrix(1, 0, 0, -1, 0, 0);

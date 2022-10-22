@@ -4,16 +4,23 @@ import GotoHomeModal from '../molecules/ GotoHomeModal';
 
 const Container = styled.div`
   position: fixed;
-  bottom: 14px;
+  bottom: 8px;
   width: 375px;
   height: 70px;
   z-index: 2;
 `;
 
+const ButtonBorder = styled.div`
+  background: #ffffff;
+  backdrop-filter: blur(2px);
+  /* Note: backdrop-filter has minimal browser support */
+  padding: 14px 42px 10px;
+  border-radius: 10px 10px 0px 0px;
+`;
+
 const Button = styled.button`
   cursor: pointer;
   display: flex;
-  margin: 14px 42px;
   justify-content: center;
   align-items: center;
   width: 291px;
@@ -42,7 +49,9 @@ const FixedButton = ({ text }: ButtonProps) => {
   };
   return (
     <Container>
-      <Button onClick={onhandleOpen}>{text}</Button>
+      <ButtonBorder>
+        <Button onClick={onhandleOpen}>{text}</Button>
+      </ButtonBorder>
       <GotoHomeModal
         isOpen={isOpen}
         onhandleOpen={() => {
