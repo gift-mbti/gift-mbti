@@ -10,7 +10,6 @@ interface Type {
 const SEO = ({ title, description }: Type) => {
   return (
     <Head>
-      <title> {title} | Gift MBTI</title>
       <meta
         name="description"
         content={description || 'mbti별 맞춤 선물을 제안해드립니다.'}

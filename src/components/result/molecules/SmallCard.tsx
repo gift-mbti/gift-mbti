@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import Link from 'next/link';
 import Router from 'next/router';
 
 const Container = styled.div`
@@ -77,9 +78,6 @@ interface SmallCardProps {
 const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
   const CardImg = `/img/Avatar/image${chemi[1]}.jpg`;
 
-  const gotoOtherMbti = () => {
-    Router.push(chemi[2]);
-  };
   return (
     <Container>
       <SmallCardTitle>
@@ -91,9 +89,10 @@ const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
           <ImgContainer>
             <Image src={CardImg} width={90} height={75} alt="small avatar" />
           </ImgContainer>
-          <DetailButton onClick={gotoOtherMbti} color={color}>
-            자세히 보기
-          </DetailButton>
+          {/* next/link 적용 */}
+          <Link href={chemi[2]}>
+            <DetailButton color={color}>자세히 보기</DetailButton>
+          </Link>
         </>
       ) : (
         <>

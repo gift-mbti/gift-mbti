@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
 import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
@@ -6,7 +8,11 @@ import Card from '../../components/result/molecules/Card';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
 import Share from '../../components/result/organisms/Share';
-import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
+// import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
+
+const GotoHomeModal = dynamic(
+  import('../../components/result/molecules/ GotoHomeModal'),
+);
 
 export const Wrapper = styled.main`
   position: relative;
@@ -71,6 +77,7 @@ const Result = ({ data }: DataProps) => {
   return (
     <Wrapper>
       <SEO title={data.name} description={`${data.name}의 선물 유형`} />
+      {/* next/dynamic 적용 */}
       <GotoHomeModal
         isOpen={isOpen}
         onhandleOpen={() => {
