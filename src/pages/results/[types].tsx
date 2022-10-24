@@ -1,7 +1,13 @@
 import styled from '@emotion/styled';
 import Router from 'next/router';
 import SEO from '../../components/SEO';
-import { Background, Container, DataProps, Wrapper } from '../result/[type]';
+import {
+  Background,
+  Container,
+  DataProps,
+  Round,
+  Wrapper,
+} from '../result/[type]';
 import Card from '../../components/result/molecules/Card';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
@@ -24,6 +30,9 @@ const Nav = styled.nav`
   }
 `;
 
+const Radius = styled(Round)`
+  height: 255px;
+`;
 interface NavButtonProps {
   type: string;
 }
@@ -67,7 +76,6 @@ const all = [
 ];
 
 const Results = ({ data }: DataProps) => {
-  const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/Dot/dot${data.type}.jpg`;
   const cardImg = `/img/Avatar/image${data.type}.jpg`;
 
@@ -96,7 +104,7 @@ const Results = ({ data }: DataProps) => {
           })}
         </Nav>
       </ButtonContainer>
-      <Background pic={backgroundImg}>
+      <Background color={data.color}>
         <Card
           name={data.name}
           cardImg={cardImg}
@@ -104,7 +112,7 @@ const Results = ({ data }: DataProps) => {
           color={data.color}
         />
       </Background>
-
+      <Radius />
       <Container>
         <Description desc={data.desc} star={starImg} />
         <Pick

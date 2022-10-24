@@ -20,7 +20,7 @@
         ["명품브랜드", "매종키츠네", "자라"],
         ["신세계 상품권", "문화상품권", "CGV"]
       ],
-      "best": ["브랜드 \n외길인생", "/img/Avatar/image2.jpg", "/result/2"],
+      "best": ["브랜드 \n외길인생", "2", "/result/2"],
       "worst": ["", ""]
     },
 
@@ -45,7 +45,7 @@
         ["올리브영", "신세계 상품권", "문화상품권"],
         ["나이키", "캘빈클라인", "명품브랜드"]
       ],
-      "best": ["큰 그림 \n선물러", "/img/Avatar/image1.jpg", "/result/1"],
+      "best": ["큰 그림 \n선물러", "1", "/result/1"],
       "worst": ["", ""]
     },
 
@@ -69,8 +69,8 @@
         ["록시땅", "헤라", "탬버린즈"],
         ["CGV", "도서상품권", "롯데 상품권"]
       ],
-      "best": ["낭만 쫓는 \n소비요정", "/img/Avatar/image4.jpg", "/result/4"],
-      "worst": ["선물 \n나르시시스트", "/img/Avatar/image8.jpg", "/result/8"]
+      "best": ["낭만 쫓는 \n소비요정", "4", "/result/4"],
+      "worst": ["선물 \n나르시시스트", "8", "/result/8"]
     },
     {
       "type": "4",
@@ -93,8 +93,8 @@
         ["도서상품권", "신세계 상품권", "올리브영"],
         ["나이키", "메종키츠네", "무신사"]
       ],
-      "best": ["아기자기 \n선물보따리", "/img/Avatar/image3.jpg", "/result/3"],
-      "worst": ["선물 \n나르시시스트", "/img/Avatar/image8.jpg", "/result/8"]
+      "best": ["아기자기 \n선물보따리", "3", "/result/3"],
+      "worst": ["선물 \n나르시시스트", "8", "/result/8"]
     },
     {
       "type": "5",
@@ -116,8 +116,8 @@
         ["신세계 상품권", "롯데 상품권", "메가박스"],
         ["디올", "조말론", "입생로랑"]
       ],
-      "best": ["반짝반짝\n플렉서", "/img/Avatar/image6.jpg", "/result/6"],
-      "worst": ["낭만 쫓는\n소비요정", "/img/Avatar/image4.jpg", "/result/4"]
+      "best": ["반짝반짝\n플렉서", "6", "/result/6"],
+      "worst": ["낭만 쫓는\n소비요정", "4", "/result/4"]
     },
 
     {
@@ -141,8 +141,8 @@
         ["신세계 상품권", "CGV", "올리브영"],
         ["탬버린즈", "디올", "딥디크"]
       ],
-      "best": ["아낌없는 \n해바라기", "/img/Avatar/image5.jpg", "/result/5"],
-      "worst": ["아기자기 \n선물보따리", "/img/Avatar/image3.jpg", "/result/3"]
+      "best": ["아낌없는 \n해바라기", "5", "/result/5"],
+      "worst": ["아기자기 \n선물보따리", "3", "/result/3"]
     },
     {
       "type": "7",
@@ -164,8 +164,8 @@
         ["CGV", "신세계 상품권", "올리브영"],
         ["애플", "갤럭시 워치", "마샬"]
       ],
-      "best": ["선물 \n나르시시스트", "/img/Avatar/image8.jpg", "/result/8"],
-      "worst": ["낭만 쫓는 \n소비요정", "/img/Avatar/image4.jpg", "/result/4"]
+      "best": ["선물 \n나르시시스트", "8", "/result/8"],
+      "worst": ["낭만 쫓는 \n소비요정", "4", "/result/4"]
     },
     {
       "type": "8",
@@ -188,8 +188,8 @@
         ["조말론", "입생로랑", "탬버린즈"],
         ["나이키", "뉴에라", "스컬프터"]
       ],
-      "best": ["프로 \n지갑지킴이", "/img/Avatar/image7.jpg", "/result/7"],
-      "worst": ["아기자기 \n선물보따리", "/img/Avatar/image3.jpg", "/result/3"]
+      "best": ["프로 \n지갑지킴이", "7", "/result/7"],
+      "worst": ["아기자기 \n선물보따리", "3", "/result/3"]
     }
   ]
 }

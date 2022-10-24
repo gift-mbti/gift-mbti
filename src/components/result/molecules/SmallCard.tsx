@@ -75,6 +75,8 @@ interface SmallCardProps {
 }
 
 const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
+  const CardImg = `/img/Avatar/image${chemi[1]}.jpg`;
+
   const gotoOtherMbti = () => {
     Router.push(chemi[2]);
   };
@@ -87,7 +89,7 @@ const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
         <>
           <SmallCardText>{chemi[0]}</SmallCardText>
           <ImgContainer>
-            <Image src={chemi[1]} width={90} height={75} alt="small avatar" />
+            <Image src={CardImg} width={90} height={75} alt="small avatar" />
           </ImgContainer>
           <DetailButton onClick={gotoOtherMbti} color={color}>
             자세히 보기

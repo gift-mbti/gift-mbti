@@ -7,13 +7,12 @@ const Container = styled.div`
   bottom: 8px;
   width: 375px;
   height: 70px;
-  z-index: 2;
+  z-index: 1;
 `;
 
 const ButtonBorder = styled.div`
   background: #ffffff;
   backdrop-filter: blur(2px);
-  /* Note: backdrop-filter has minimal browser support */
   padding: 14px 42px 10px;
   border-radius: 10px 10px 0px 0px;
 `;
