@@ -7,7 +7,7 @@ import {
   DataProps,
   Round,
   Wrapper,
-} from '../result/[...type]';
+} from '../result/[type]';
 import Card from '../../components/result/molecules/Card';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
