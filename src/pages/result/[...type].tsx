@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
 import Card from '../../components/result/molecules/Card';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
-
 import Share from '../../components/result/organisms/Share';
 import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
 
@@ -107,35 +105,9 @@ const Result = ({ data }: DataProps) => {
 
 export default Result;
 
-export async function getStaticPaths() {
+export async function getServerSideProps({ params }: any) {
   const { data } = await import('../../data/result.json');
 
-  const paths = data.map((list) => ({
-    params: { type: list.type },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-// jaman - any 타입 제거하기
-export async function getStaticProps({ params }: any) {
-  // 절대경로 찾아보기
-  const { data } = await import('../../data/result.json');
-
-  if (!params) {
-    return {
-      notFound: true,
-    };
-  }
-
-  if (!data) {
-    return { notFound: true };
-  }
-
-  // {props: data} 빌드 타임에 받아서 result 컴포넌트로 보냄
   return {
     props: {
       data: data[params.type - 1],

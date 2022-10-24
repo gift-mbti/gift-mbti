@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import QuizArticle from '../components/QuizArticle';
-import items from '../data/quiz';
 // import qna from '../data/quiz.json';
 import calculateResult from '../utils/calculateResult';
 import QuizTitle from '../components/QuizTitle';
