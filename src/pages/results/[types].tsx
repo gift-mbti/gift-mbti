@@ -19,8 +19,19 @@ const Nav = styled.nav`
   overflow-x: scroll;
   overflow-y: hidden;
   cursor: pointer;
+
+  &:hover {
+    ::-webkit-scrollbar-thumb {
+      /* background-color: ${(props) => props.color}; */
+      background-color: #00000028;
+    }
+    ::-webkit-scrollbar {
+      height: 5px;
+    }
+  }
+
   ::-webkit-scrollbar {
-    display: none;
+    height: 5px;
   }
 `;
 
