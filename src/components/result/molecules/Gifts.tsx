@@ -61,7 +61,7 @@ const Dot = styled.div`
   margin-bottom: 3px;
   width: 2px;
   height: 2px;
-
+  border-radius: 8px;
   background: ${(props) => props.color};
 `;
 
@@ -69,7 +69,7 @@ const TagContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  gap: 9px;
 `;
 
 interface IGifts {

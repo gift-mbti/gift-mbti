@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
@@ -9,10 +10,6 @@ import Cards from '../../components/result/organisms/Cards';
 import Share from '../../components/result/organisms/Share';
 import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
 
-interface IBackground {
-  pic: string;
-}
-
 export const Wrapper = styled.main`
   position: relative;
   width: 375px;
@@ -20,11 +17,23 @@ export const Wrapper = styled.main`
   white-space: pre-wrap;
 `;
 
-export const Background = styled.div<IBackground>`
+export const Background = styled.div`
   width: 375px;
   height: 408.87px;
-  background-repeat: no-repeat;
-  background-image: url(${(props) => props.pic});
+  background-color: ${(props) => props.color};
+  z-index: -1;
+`;
+
+export const Round = styled.div`
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  top: 217px;
+  left: -65px;
+  width: 505px;
+  height: 232px; /* as the half of the width */
+  border-top-left-radius: 252px; /* 100px of height + 10px of border */
+  border-top-right-radius: 252px; /* 100px of height + 10px of border */
 `;
 
 export const Container = styled.div`
@@ -58,7 +67,6 @@ export interface DataProps {
 
 const Result = ({ data }: DataProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/Dot/dot${data.type}.jpg`;
   const cardImg = `/img/Avatar/image${data.type}.jpg`;
 
@@ -71,7 +79,7 @@ const Result = ({ data }: DataProps) => {
           setIsOpen(false);
         }}
       />
-      <Background pic={backgroundImg}>
+      <Background color={data.color}>
         <Card
           name={data.name}
           cardImg={cardImg}
@@ -79,6 +87,7 @@ const Result = ({ data }: DataProps) => {
           color={data.color}
         />
       </Background>
+      <Round />
       <Container>
         <Description desc={data.desc} star={starImg} />
         <Pick
@@ -113,6 +122,7 @@ export async function getStaticPaths() {
 
 // jaman - any 타입 제거하기
 export async function getStaticProps({ params }: any) {
+  // 절대경로 찾아보기
   const { data } = await import('../../data/result.json');
 
   if (!params) {

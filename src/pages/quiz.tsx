@@ -1,12 +1,9 @@
 import styled from '@emotion/styled';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
-import Modal from 'react-modal';
-import { GetStaticProps } from 'next';
 import QuizArticle from '../components/QuizArticle';
 import items from '../data/quiz';
 // import qna from '../data/quiz.json';
-import ModalStyle from '../styles/modalStyle';
 import calculateResult from '../utils/calculateResult';
 import QuizTitle from '../components/QuizTitle';
 import SEO from '../components/SEO';
