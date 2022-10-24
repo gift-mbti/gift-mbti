@@ -40,7 +40,7 @@ const loading = () => {
 
   return (
     <LoadingWrapper>
-      <SEO title="Loading" description="loading" />
+      <SEO title="Loading" description="loading" image="" />
       <LoadingTitle>{loadingTitle}</LoadingTitle>
       <LoadingImg src="/img/loadingGif.gif" />
     </LoadingWrapper>

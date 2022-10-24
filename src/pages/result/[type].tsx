@@ -76,7 +76,11 @@ const Result = ({ data }: DataProps) => {
 
   return (
     <Wrapper>
-      <SEO title={data.name} description={`${data.name}의 선물 유형`} />
+      <SEO
+        title={data.name}
+        description={`${data.name}의 선물 유형`}
+        image={cardImg}
+      />
       {/* next/dynamic 적용 */}
       <GotoHomeModal
         isOpen={isOpen}
