@@ -114,3 +114,38 @@ export async function getServerSideProps({ params }: any) {
     },
   };
 }
+
+export async function getStaticPaths() {
+  const { data } = await import('../../data/result.json');
+
+  const paths = data.map((list) => ({
+    params: { type: list.type },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+// jaman - any 타입 제거하기
+export async function getStaticProps({ params }: any) {
+  const { data } = await import('../../data/result.json');
+
+  if (!params) {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (!data) {
+    return { notFound: true };
+  }
+
+  // {props: data} 빌드 타임에 받아서 result 컴포넌트로 보냄
+  return {
+    props: {
+      data: data[params.type - 1],
+    },
+  };
+}
