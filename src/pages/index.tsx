@@ -57,7 +57,11 @@ const StartButton = styled.button`
 const Home = () => {
   return (
     <Wrapper>
-      <SEO title="나의 선물 유형을 찾아서" description="" />
+      <SEO
+        title="나의 선물 유형을 찾아서"
+        description=""
+        image="/img/img_main.jpg"
+      />
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
