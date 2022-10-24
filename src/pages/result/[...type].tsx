@@ -105,16 +105,6 @@ const Result = ({ data }: DataProps) => {
 
 export default Result;
 
-export async function getServerSideProps({ params }: any) {
-  const { data } = await import('../../data/result.json');
-
-  return {
-    props: {
-      data: data[params.type - 1],
-    },
-  };
-}
-
 export async function getStaticPaths() {
   const { data } = await import('../../data/result.json');
 
