@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 const BasicButton = styled.button`
   box-sizing: border-box;
@@ -33,13 +34,12 @@ interface ButtonProps {
   onButtonClick?: () => void;
 }
 
-// jaman - 처음으로 돌아가시겠습니까?
 const Button = ({ onButtonClick, color, text, type }: ButtonProps) => {
   const result =
     type === 'defult' ? (
-      <BasicButton onClick={onButtonClick} color={color}>
-        {text}
-      </BasicButton>
+      <Link href="/results/1">
+        <BasicButton color={color}>{text}</BasicButton>
+      </Link>
     ) : (
       <ColorReverseButton onClick={onButtonClick} color={color}>
         {text}
