@@ -1,34 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gift MBTI
+✨MBTI별 선물을 추천해주는 웹서비스✨
 
-## Getting Started
 
-First, run the development server:
+### Demo
+링크: 
 
-```bash
-npm run dev
-# or
-yarn dev
+## 1. 프로젝트 개요
+<br/>
+
+## 2. 목표
+
+### 작업 기간
+: 2022-09-16 
+<br/>
+
+## 3. 사용 스택
+#### 1. Next JS
+#### 2. typescript
+#### 3. Redux-toolkit
+#### 4. Emotion
+
+### ➕ 사용 툴
+협업 및 프로젝트 관리 I Github
+커뮤니케이션 I Jira
+UI, 화면구성 I Figma (디자이너와 협업!)
+회의 I 게더타운
+
+### 프로젝트 세팅
+[ESLint(airbnb), Prettier](https://velog.io/@zaman17/Gift-MBTI-1.-Next.js-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85-ESLintairbnb-Prettier-%EC%84%A4%EC%A0%95)
+
+<br/>
+
+## 4. 폴더 구조 🗂 
+
 ```
+.
+├── components
+│   ├── QuizArticle.tsx
+│   ├── QuizTitle.tsx
+│   ├── SEO.tsx
+│   └── result
+│       ├── atoms
+│       │   ├── Button.tsx
+│       │   ├── FixedButton.tsx
+│       │   ├── PickSign.tsx
+│       │   ├── ShareButton.tsx
+│       │   └── Tag.tsx
+│       ├── molecules
+│       │   ├──  GotoHomeModal.tsx
+│       │   ├── Card.tsx
+│       │   ├── Gifts.tsx
+│       │   ├── Pick.tsx
+│       │   └── SmallCard.tsx
+│       └── organisms
+│           ├── Cards.tsx
+│           ├── Description.tsx
+│           └── Share.tsx
+├── data
+│   ├── quiz.json
+│   ├── quiz.ts
+│   └── result.json
+├── pages
+│   ├── 404.tsx
+│   ├── _app.tsx
+│   ├── index.tsx
+│   ├── loading.tsx
+│   ├── quiz.tsx
+│   ├── result
+│   │   └── [type].tsx
+│   └── results
+│       └── [types].tsx
+├── store
+├── styles
+│   ├── emotion.d.ts
+│   ├── modalStyle.ts
+│   ├── reset.ts
+│   ├── style.css
+│   └── themes.ts
+└── utils
+    └── calculateResult.ts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+<br/>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 5. Why & How
+<br/>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

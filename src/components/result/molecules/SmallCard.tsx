@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import Link from 'next/link';
 import Router from 'next/router';
 
 const Container = styled.div`
   position: relative;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   width: 136px;
   height: 204px;
   top: 14px;
@@ -49,7 +50,7 @@ const ImgContainer = styled.div`
 
 const DetailButton = styled.button`
   position: relative;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   width: 100%;
   height: 39px;
   margin-top: 3px;
@@ -75,9 +76,8 @@ interface SmallCardProps {
 }
 
 const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
-  const gotoOtherMbti = () => {
-    Router.push(chemi[2]);
-  };
+  const CardImg = `/img/Avatar/image${chemi[1]}.jpg`;
+
   return (
     <Container>
       <SmallCardTitle>
@@ -87,11 +87,12 @@ const SmallCard = ({ chemi, type, color }: SmallCardProps) => {
         <>
           <SmallCardText>{chemi[0]}</SmallCardText>
           <ImgContainer>
-            <Image src={chemi[1]} width={90} height={75} alt="small avatar" />
+            <Image src={CardImg} width={90} height={75} alt="small avatar" />
           </ImgContainer>
-          <DetailButton onClick={gotoOtherMbti} color={color}>
-            자세히 보기
-          </DetailButton>
+          {/* next/link 적용 */}
+          <Link href={chemi[2]}>
+            <DetailButton color={color}>자세히 보기</DetailButton>
+          </Link>
         </>
       ) : (
         <>

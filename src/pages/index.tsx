@@ -37,7 +37,7 @@ const CardImg = styled.img`
 `;
 
 const StartButton = styled.button`
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   display: block;
   background-color: #fd6463;
   width: 319px;
@@ -57,7 +57,7 @@ const StartButton = styled.button`
 const Home = () => {
   return (
     <Wrapper>
-      <SEO title="나의 선물 유형을 찾아서" description="" />
+      <SEO title="나의 선물 유형을 찾아서" />
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>

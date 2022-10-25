@@ -1,31 +1,43 @@
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
 import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';
 import Card from '../../components/result/molecules/Card';
 import SEO from '../../components/SEO';
 import Cards from '../../components/result/organisms/Cards';
-
 import Share from '../../components/result/organisms/Share';
-import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
+// import GotoHomeModal from '../../components/result/molecules/ GotoHomeModal';
 
-interface IBackground {
-  pic: string;
-}
+const GotoHomeModal = dynamic(
+  import('../../components/result/molecules/ GotoHomeModal'),
+);
 
 export const Wrapper = styled.main`
   position: relative;
   width: 375px;
   font-style: normal;
   white-space: pre-wrap;
-  /* margin-bottom: 140px; */
 `;
 
-export const Background = styled.div<IBackground>`
+export const Background = styled.div`
   width: 375px;
   height: 408.87px;
-  background-repeat: no-repeat;
-  background-image: url(${(props) => props.pic});
+  background-color: ${(props) => props.color};
+  z-index: -1;
+`;
+
+export const Round = styled.div`
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  top: 217px;
+  left: -65px;
+  width: 505px;
+  height: 232px; /* as the half of the width */
+  border-top-left-radius: 252px; /* 100px of height + 10px of border */
+  border-top-right-radius: 252px; /* 100px of height + 10px of border */
 `;
 
 export const Container = styled.div`
@@ -59,20 +71,20 @@ export interface DataProps {
 
 const Result = ({ data }: DataProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const backgroundImg = `/img/background/bg_result${data.type}.svg`;
   const starImg = `/img/Dot/dot${data.type}.jpg`;
   const cardImg = `/img/Avatar/image${data.type}.jpg`;
 
   return (
     <Wrapper>
-      <SEO title={data.name} description={`${data.name}의 선물 유형`} />
+      <SEO title={data.name} />
+      {/* next/dynamic 적용 */}
       <GotoHomeModal
         isOpen={isOpen}
         onhandleOpen={() => {
           setIsOpen(false);
         }}
       />
-      <Background pic={backgroundImg}>
+      <Background color={data.color}>
         <Card
           name={data.name}
           cardImg={cardImg}
@@ -80,6 +92,7 @@ const Result = ({ data }: DataProps) => {
           color={data.color}
         />
       </Background>
+      <Round />
       <Container>
         <Description desc={data.desc} star={starImg} />
         <Pick

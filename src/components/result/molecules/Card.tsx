@@ -11,6 +11,7 @@ const Container = styled.section`
   background: #ffffff;
   box-shadow: 0px 10px 40px rgba(106, 106, 106, 0.25);
   border-radius: 20px;
+  z-index: 3;
 `;
 
 const CardTitle = styled.div`

@@ -21,7 +21,6 @@ const Title1 = styled.div`
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
-
   color: #929090;
 `;
 

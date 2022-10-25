@@ -66,12 +66,7 @@ const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
       <ShareTitle>결과 공유하기</ShareTitle>
       <ShareButton onClick={onShareButtonClick} color={color} />
       <ButtonContainer>
-        <Button
-          onButtonClick={gotoResults}
-          color={color}
-          text="다른 유형 보기"
-          type="defult"
-        />
+        <Button color={color} text="다른 유형 보기" type="defult" />
         <Button
           onButtonClick={gotoHome}
           color={color}

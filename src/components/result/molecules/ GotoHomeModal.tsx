@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import Router from 'next/router';
 import Modal from 'react-modal';
 import ModalStyle from '../../../styles/modalStyle';
@@ -50,15 +51,13 @@ interface GoToHomeModalProps {
 }
 
 const GotoHomeModal = ({ isOpen, onhandleOpen }: GoToHomeModalProps) => {
-  const onHomeClick = () => {
-    Router.push('/');
-  };
-
   return (
     <Modal isOpen={isOpen} style={ModalStyle} ariaHideApp={false}>
       <ModalWrapper>
         <ModalTitle>처음으로 돌아가시겠어요?</ModalTitle>
-        <ModalBackBtn onClick={onHomeClick}>돌아가기</ModalBackBtn>
+        <Link href="/">
+          <ModalBackBtn>돌아가기</ModalBackBtn>
+        </Link>
         <ModalCancelBtn onClick={onhandleOpen}>취소</ModalCancelBtn>
       </ModalWrapper>
     </Modal>

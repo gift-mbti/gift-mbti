@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import QuizArticle from '../components/QuizArticle';
-import items from '../data/quiz';
 // import qna from '../data/quiz.json';
 import calculateResult from '../utils/calculateResult';
 import QuizTitle from '../components/QuizTitle';
@@ -10,7 +9,7 @@ import SEO from '../components/SEO';
 import GotoHomeModal from '../components/result/molecules/ GotoHomeModal';
 
 const Wrapper = styled.div`
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   @media (max-width: 700px) {
     margin-bottom: 70px;
   }
@@ -133,7 +132,7 @@ const quiz = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO title="나의 선물 유형을 찾아서" description="" />
+      <SEO title="나의 선물 유형을 찾아서" />
       <QuizHeader>
         <QuizLogoImg
           src="/img/newQuizLogo2.png"
