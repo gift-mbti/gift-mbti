@@ -3,7 +3,8 @@
 
 
 ### Demo
-링크: 
+링크: https://gift-mbti.vercel.app/
+
 
 ## 1. 프로젝트 개요
 <br/>
