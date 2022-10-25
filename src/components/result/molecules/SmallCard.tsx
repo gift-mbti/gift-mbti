@@ -5,7 +5,7 @@ import Router from 'next/router';
 
 const Container = styled.div`
   position: relative;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   width: 136px;
   height: 204px;
   top: 14px;
@@ -50,7 +50,7 @@ const ImgContainer = styled.div`
 
 const DetailButton = styled.button`
   position: relative;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   width: 100%;
   height: 39px;
   margin-top: 3px;

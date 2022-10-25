@@ -12,7 +12,7 @@ const BasicButton = styled.button`
   color: ${(props) => props.color};
   background: #ffffff;
 
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 100%;

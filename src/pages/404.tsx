@@ -34,7 +34,7 @@ const BeforeBtn = styled.button`
   left: 42px;
   top: 522px;
   background: #ffffff;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   border: 2px solid #fe5756;
   border-radius: 10px;
   font-weight: 700;
@@ -50,7 +50,7 @@ const HomeBtn = styled.button`
   height: 56px;
   right: 42px;
   top: 522px;
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 100%;
