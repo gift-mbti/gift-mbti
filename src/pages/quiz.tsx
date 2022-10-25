@@ -132,11 +132,7 @@ const quiz = ({ data }: any) => {
 
   return (
     <Wrapper>
-      <SEO
-        title="나의 선물 유형을 찾아서"
-        description=""
-        image="/img/newQuizLogo2.png"
-      />
+      <SEO title="나의 선물 유형을 찾아서" />
       <QuizHeader>
         <QuizLogoImg
           src="/img/newQuizLogo2.png"
