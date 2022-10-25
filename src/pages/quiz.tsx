@@ -9,7 +9,7 @@ import SEO from '../components/SEO';
 import GotoHomeModal from '../components/result/molecules/ GotoHomeModal';
 
 const Wrapper = styled.div`
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   @media (max-width: 700px) {
     margin-bottom: 70px;
   }

@@ -28,7 +28,7 @@ const Button = styled.button`
   background: #000000;
   border-radius: 15px;
 
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;

@@ -37,7 +37,7 @@ const CardImg = styled.img`
 `;
 
 const StartButton = styled.button`
-  font-family: 'Pretendard';
+  font-family: 'Pretendard Variable', sans-serif;
   display: block;
   background-color: #fd6463;
   width: 319px;
