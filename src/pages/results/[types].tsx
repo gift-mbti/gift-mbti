@@ -96,11 +96,7 @@ const Results = ({ data }: DataProps) => {
 
   return (
     <Wrapper>
-      <SEO
-        title={data.name}
-        description={`${data.name}의 선물 유형`}
-        image={cardImg}
-      />
+      <SEO title={data.name} />
       <FixedButton text="테스트 다시하기" />
       <ButtonContainer color={data.color}>
         <Nav color={data.color}>

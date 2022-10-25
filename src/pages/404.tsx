@@ -77,7 +77,7 @@ const Error = () => {
   };
   return (
     <ErrorWrapper>
-      <SEO title="404" description="404" image="" />
+      <SEO title="404" />
       <ErrorTitle>너무 멀리왔어요!</ErrorTitle>
       <ErrorSubTitle>{errorSubTitle}</ErrorSubTitle>
       <ErrorImg
