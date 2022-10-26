@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import SEO from '../components/SEO';
@@ -11,13 +10,11 @@ const Title = styled.p`
   margin: 0 auto;
   margin-top: 42px;
   text-align: center;
-  //호진 TODO : 30px하면 다음줄로 넘어감
   font-size: 29px;
   color: #000000;
 `;
 
 const SubTitle = styled.p`
-  //호진 TODO : font 굵기가 약간 이상한거 같음
   width: 214px;
   line-height: 16px;
   font-size: 16px;
@@ -28,12 +25,6 @@ const SubTitle = styled.p`
 
 const CardContainer = styled.div`
   margin-top: 32px;
-`;
-
-// lighthouse 최적화 - Image elements do not have explicit width and height
-const CardImg = styled.img`
-  width: 375px;
-  height: 440px;
 `;
 
 const StartButton = styled.button`
@@ -67,13 +58,6 @@ const Home = () => {
           width="375px"
           height="440px"
         />
-        {/* <Image
-          src="/img/img_main2.png"
-          alt="homeCard"
-          width="375px"
-          height="440px"
-          priority
-        /> */}
       </CardContainer>
       {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
       <Link href="/quiz">

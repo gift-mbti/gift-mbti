@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Link from 'next/link';
-import Router from 'next/router';
 
 const Container = styled.div`
   position: relative;
@@ -45,7 +44,6 @@ const ImgContainer = styled.div`
   height: 80px;
   margin-top: 3px;
   margin-left: auto;
-  /* background-color: red; */
 `;
 
 const DetailButton = styled.button`
