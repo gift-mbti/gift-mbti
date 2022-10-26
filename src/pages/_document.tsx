@@ -14,7 +14,7 @@ const Document = () => {
         <meta property="og:title" content="나의 선물 유형을 찾아서" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gift-mbti.vercel.app" />
-        <meta property="og:image" content="/public/img/homeCard.png" />
+        <meta property="og:image" content="/img/img_main.jpg" />
         <meta property="og:article:author" content="선물 유형 찾기" />
       </Head>
       <body>

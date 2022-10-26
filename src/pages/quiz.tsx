@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import QuizArticle from '../components/QuizArticle';
-// import qna from '../data/quiz.json';
 import calculateResult from '../utils/calculateResult';
 import QuizTitle from '../components/QuizTitle';
 import SEO from '../components/SEO';
@@ -20,7 +19,6 @@ const QuizHeader = styled.div`
   justify-content: space-between;
 `;
 const QuizLogoImg = styled.img`
-  /* 호진 TODO : logo 사이즈 다시 보기 */
   width: 60px;
   height: 32px;
   margin-left: 40px;
@@ -41,33 +39,9 @@ const QuestionCountContainer = styled.p`
   color: #575757;
 `;
 
-// const QuizCardContainer = styled.div`
-//   position: relative;
-//   width: 375px;
-//   height: 444px;
-// `;
-// const QuizCard = styled.img`
-//   position: relative;
-// `;
-// const QuizCardContent = styled.p`
-//   position: absolute;
-//   width: 190px;
-//   height: 106px;
-//   text-align: center;
-//   font-size: 17px;
-//   line-height: 150%;
-//   font-weight: 800;
-//   // 호진 TODO : 텍스트 가운데 정렬 오류가 있음!
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   white-space: pre-wrap;
-// `;
-
 interface TypeState {
   [key: string]: number;
 }
-// ans 타입 다시 설정하기
 interface AnswerProps {
   content: string;
   type: {
@@ -92,8 +66,6 @@ const quiz = ({ data }: any) => {
   });
 
   const router = useRouter();
-  console.log(currentData);
-
   // finish의 상태가 바뀌면 계산을 진행한후에 결과값을 출력한다.
   useEffect(() => {
     // 호진TODO: useEffect를 사용해서 finish의 상태가 바뀔때 사용하는데 왜 finish의 상태가 바뀌지 않아도 작동하는지 모르겠음
