@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import QuizArticle from '../components/QuizArticle';
@@ -18,9 +19,7 @@ const QuizHeader = styled.div`
   margin-top: 27px;
   justify-content: space-between;
 `;
-const QuizLogoImg = styled.img`
-  width: 60px;
-  height: 32px;
+const QuizLogoImg = styled.div`
   margin-left: 40px;
   cursor: pointer;
 `;
@@ -54,7 +53,6 @@ const quiz = ({ data }: any) => {
   const [questions, setQuestion] = useState<number>(8);
   const [finish, setFinish] = useState<boolean>(false);
   const currentData = useMemo(() => data[steps], [steps]);
-  // jaman - 변수명 isOpen -> setIsOpen으로 수정
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [type, setType] = useState<TypeState>({
     S: 0,
@@ -66,9 +64,8 @@ const quiz = ({ data }: any) => {
   });
 
   const router = useRouter();
-  // finish의 상태가 바뀌면 계산을 진행한후에 결과값을 출력한다.
+
   useEffect(() => {
-    // 호진TODO: useEffect를 사용해서 finish의 상태가 바뀔때 사용하는데 왜 finish의 상태가 바뀌지 않아도 작동하는지 모르겠음
     if (!finish) return;
 
     const res = calculateResult(type);
@@ -80,7 +77,6 @@ const quiz = ({ data }: any) => {
     });
   }, [finish]);
 
-  // 호진 TODO: ans 타입이 any일때는 value값에 에러가 발생하는데 타입을 지정해주면 에러가 발생하지 않음!
   const handleClickNextStep = (ans: AnswerProps) => {
     const [key, value] = Object.entries(ans.type)[0];
 
@@ -106,11 +102,14 @@ const quiz = ({ data }: any) => {
     <Wrapper>
       <SEO title="나의 선물 유형을 찾아서" />
       <QuizHeader>
-        <QuizLogoImg
-          src="/img/newQuizLogo2.png"
-          alt="quizLogo"
-          onClick={handleClickModal}
-        />
+        <QuizLogoImg onClick={handleClickModal}>
+          <Image
+            src="/img/newQuizLogo2.png"
+            alt="quizLogo"
+            width={60}
+            height={32}
+          />
+        </QuizLogoImg>
         <GotoHomeModal
           isOpen={isOpen}
           onhandleOpen={() => {

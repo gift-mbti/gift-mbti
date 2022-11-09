@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import React from 'react';
 
 const QuizAnswerBtn1 = styled.button`
   font-family: 'Pretendard Variable', sans-serif;

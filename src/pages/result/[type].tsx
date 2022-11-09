@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
-
 import styled from '@emotion/styled';
 import Description from '../../components/result/organisms/Description';
 import Pick from '../../components/result/molecules/Pick';

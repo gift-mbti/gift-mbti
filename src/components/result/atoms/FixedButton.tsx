@@ -40,7 +40,6 @@ interface ButtonProps {
   text: string;
 }
 
-// jaman - 처음으로 돌아가시겠습니까?
 const FixedButton = ({ text }: ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const onhandleOpen = () => {
