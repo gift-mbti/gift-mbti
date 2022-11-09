@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import SEO from '../components/SEO';
 
 const LoadingWrapper = styled.div`
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 `;
 const LoadingTitle = styled.p`
   position: absolute;
@@ -19,12 +24,10 @@ const LoadingTitle = styled.p`
   white-space: pre-wrap;
 `;
 
-const LoadingImg = styled.img`
+const LoadingImg = styled.div`
   position: absolute;
   top: 320px;
   left: 118px;
-  width: 139px;
-  height: 132px;
 `;
 
 const loading = () => {
@@ -42,7 +45,14 @@ const loading = () => {
     <LoadingWrapper>
       <SEO title="Loading" />
       <LoadingTitle>{loadingTitle}</LoadingTitle>
-      <LoadingImg src="/img/loadingGif.gif" />
+      <LoadingImg>
+        <Image
+          alt="loading img"
+          width={139}
+          height={132}
+          src="/img/loadingGif.gif"
+        />
+      </LoadingImg>
     </LoadingWrapper>
   );
 };

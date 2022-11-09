@@ -46,6 +46,7 @@ const Share = ({ bgColor, color, setIsOpen }: ShareProps) => {
   const gotoHome = () => {
     setIsOpen(true);
   };
+
   const gotoResults = () => {
     Router.push('/results/1');
   };

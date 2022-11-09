@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import Link from 'next/link';
+import Router from 'next/router';
 import SEO from '../components/SEO';
 
 const Wrapper = styled.div``;
@@ -46,23 +48,24 @@ const StartButton = styled.button`
 `;
 
 const Home = () => {
+  const onButtonClick = () => {
+    Router.push('/quiz');
+  };
+
   return (
     <Wrapper>
       <SEO title="나의 선물 유형을 찾아서" />
       <Title>나의 선물 유형을 찾아서</Title>
       <SubTitle>내가 어떤 선물러인지 알아볼까요?</SubTitle>
       <CardContainer>
-        <img
+        <Image
           src="/img/img_main.jpg"
           alt="homeCard"
-          width="375px"
-          height="440px"
+          width={375}
+          height={440}
         />
       </CardContainer>
-      {/* 호진 TODO : Button은 컴포넌트로 빼면 좋을듯 */}
-      <Link href="/quiz">
-        <StartButton>테스트 시작하기</StartButton>
-      </Link>
+      <StartButton onClick={onButtonClick}>테스트 시작하기</StartButton>
     </Wrapper>
   );
 };

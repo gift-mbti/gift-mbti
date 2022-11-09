@@ -51,13 +51,14 @@ interface GoToHomeModalProps {
 }
 
 const GotoHomeModal = ({ isOpen, onhandleOpen }: GoToHomeModalProps) => {
+  const onButtonClick = () => {
+    Router.push('/');
+  };
   return (
     <Modal isOpen={isOpen} style={ModalStyle} ariaHideApp={false}>
       <ModalWrapper>
         <ModalTitle>처음으로 돌아가시겠어요?</ModalTitle>
-        <Link href="/">
-          <ModalBackBtn>돌아가기</ModalBackBtn>
-        </Link>
+        <ModalBackBtn onClick={onButtonClick}>돌아가기</ModalBackBtn>
         <ModalCancelBtn onClick={onhandleOpen}>취소</ModalCancelBtn>
       </ModalWrapper>
     </Modal>
