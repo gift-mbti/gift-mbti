@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import Link from 'next/link';
 import Router from 'next/router';
 import SEO from '../components/SEO';
 
@@ -63,6 +62,7 @@ const Home = () => {
           alt="homeCard"
           width={375}
           height={440}
+          priority
         />
       </CardContainer>
       <StartButton onClick={onButtonClick}>테스트 시작하기</StartButton>

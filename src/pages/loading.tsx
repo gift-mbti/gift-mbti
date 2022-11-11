@@ -47,10 +47,12 @@ const loading = () => {
       <LoadingTitle>{loadingTitle}</LoadingTitle>
       <LoadingImg>
         <Image
+          priority
           alt="loading img"
           width={139}
           height={132}
           src="/img/loadingGif.gif"
+          unoptimized
         />
       </LoadingImg>
     </LoadingWrapper>
